@@ -1,0 +1,63 @@
+
+
+.loginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .log-in-wrapper{
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    font-weight: 900;
+    color: white;
+    font-size: 1.3em;
+    flex-direction: column;
+    background-image: url('./images/landlord-tenant.jpg');
+    background-repeat: no-repeat;
+    
+    background-size: 100% 100%;
+    background-clip: border-box;    
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 12px 24px 15px rgba(2,2,13,0.33);
+
+    width: 50vw;
+    height: 75vh;
+    }
+    .login-form {
+        
+        display: flex;
+        flex-direction: column;        
+        justify-content: center;
+        input {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            font-weight: 900;
+            padding: 10px;
+            font-size: 1.2rem;
+            background:transparent;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+}   input[type=text]:focus {
+            background-color: darkblue;
+            color: white;
+          }input[type=password]:focus {
+            background-color: darkblue;
+            color: white;
+          }
+    .btn {
+        background-color: blue;
+        color: white;
+        width: 25%;
+        height: 50px;
+        border: 2px black solid;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+}   
+        }
+    }
