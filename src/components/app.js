@@ -21,9 +21,7 @@ export default class App extends Component {
           <NavBar />
           <div>
            <Route exact path="/" component={LoginPage} />
-           <Route path="/home" component={DashBoard} render={() => (
-             {...this.props}
-           )}  />
+           <Route path="/dashboard" component={DashBoard} />
           </div>
         </Router>
       </div>

@@ -15,6 +15,13 @@ export default class NavBar extends Component {
 
    render() {
      return (
+         <div>
+         <div className="name-container">
+                 <h2>LandLord Tenant App</h2>
+             <div className="name-wrapper">
+             <h1>Jacobs Page</h1>
+             </div>
+         </div>
          <div className="nav-container">
         <div className="nav-wrapper">
             <NavLink to='/home' activeClassName="active" className="nav-link">Home</NavLink>
@@ -28,7 +35,7 @@ export default class NavBar extends Component {
         <div className="nav-wrapper">
             <NavLink to='/pay-rent' activeClassName="active" className="nav-link">Pay Rent</NavLink> 
         </div>
-
+        </div>
    </div>
    )
   }

@@ -1,18 +1,18 @@
 import React, { useState }  from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink,  Link } from 'react-router-dom'
 
 const DashBoard = props => {
-    const [user, setUser] = useState('user')
+    const [user, setUser] = useState('Admin')
     
-    const setDashBoard = user === props.user ? setUser(props.user) : setUser("user")
+    // const setDashBoard = user === "Admin"  ? user : setUser("user")
 
-    if(setDashBoard === "Admin"){
+    if(user === "Admin"){
         return(
-            <div>
+            <div className="hero-side-container">
            <div className="side-bar">
                <Link to="/home" />
-               <NavLink path="/portfolio">Portfolio of Homes</NavLink>
-               <NavLink path="/addRemoveUsers">Add/Remove Tenants</NavLink> 
+               <Link to="/portfolio" >Portfolio of Homes</Link>
+               <Link to="/addRemoveUsers" >Add/Remove Tenants</Link> 
            </div>
         </div>
     )
