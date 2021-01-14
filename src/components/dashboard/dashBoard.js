@@ -1,28 +1,31 @@
 import React, { useState }  from 'react'
-import { NavLink,  Link } from 'react-router-dom'
+import NavBar from '../Navigation/navBar'
+import LoginPage from '../loginPage'
 
 const DashBoard = props => {
     const [user, setUser] = useState('Admin')
+    const [loggedIn, setLoggedIn] = useState(false)
+
+    
+        
+        
     
     // const setDashBoard = user === "Admin"  ? user : setUser("user")
-
-    if(user === "Admin"){
-        return(
-            <div className="hero-side-container">
-           <div className="side-bar">
-               <Link to="/home" />
-               <Link to="/portfolio" >Portfolio of Homes</Link>
-               <Link to="/addRemoveUsers" >Add/Remove Tenants</Link> 
-           </div>
-        </div>
-    )
-} else {
-    return (
+    
+    return(
         <div>
-            <h1>Hi there from else </h1>
-        </div>
+        <NavBar 
+        user={user === "user" ? user : setUser("Admin")}>
+        <LoginPage loginIsOpen={loggedIn} />
+        </NavBar>
+            
+                
+           </div>
+        
     )
 }
-}
+    
+
+
 
 export default DashBoard;

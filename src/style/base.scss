@@ -3,10 +3,11 @@
     font-family: 'Fira Sans', sans-serif;
 }
 body {
-    background-color: slategrey;
-}
-.container {
+    background-color: slategray;
+    object-fit: cover;
+    .container {
     display: flex;
     justify-content: center;
     background-color: darkblue;
+}
 }

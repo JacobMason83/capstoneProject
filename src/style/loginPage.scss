@@ -1,35 +1,25 @@
 
 
 .loginPage {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    
+    
+    
     .log-in-wrapper{
-    display: flex;
-    justify-content: center;
-    padding-left: 10px;
+    
+    
+   
     font-weight: 900;
     color: white;
     font-size: 1.3em;
-    flex-direction: column;
-    background-image: url('./images/landlord-tenant.jpg');
-    background-repeat: no-repeat;
     
-    background-size: 100% 100%;
-    background-clip: border-box;    
-    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 12px 24px 15px rgba(2,2,13,0.33);
-
-    width: 50vw;
-    height: 75vh;
+    
+    
+   
     }
-    .login-form {
+    .login-form {     
         
-        display: flex;
-        flex-direction: column;        
-        justify-content: center;
         input {
-            display: flex;
-            flex-direction: column;
+            
             color: white;
             font-weight: 900;
             padding: 10px;
@@ -48,6 +38,7 @@
             color: white;
           }
     .btn {
+        margin-top: 15px;
         background-color: blue;
         color: white;
         width: 25%;

@@ -11,7 +11,8 @@ export default class App extends Component {
     super()
     this.state = {
       user: 'Admin',
-      loggedIn: true
+      loggedIn: true,
+      
     }
   }
   render () {
