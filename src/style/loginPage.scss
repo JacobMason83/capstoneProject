@@ -1,13 +1,10 @@
 
 
-.loginPage {
+
     
     
     
-    .log-in-wrapper{
-    
-    
-   
+    .log-in-wrapper{   
     font-weight: 900;
     color: white;
     font-size: 1.3em;
@@ -30,10 +27,11 @@
             -moz-border-radius: 10px;
             -ms-border-radius: 10px;
             -o-border-radius: 10px;
-}   input[type=text]:focus {
+}       input[type=text]:focus {
             background-color: darkblue;
             color: white;
-          }input[type=password]:focus {
+       
+        }input[type=password]:focus {
             background-color: darkblue;
             color: white;
           }
@@ -51,4 +49,4 @@
         -o-border-radius: 15px;
 }   
         }
-    }
+    

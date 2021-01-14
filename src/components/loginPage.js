@@ -8,12 +8,8 @@ export default class LoginPage extends Component {
         super(props)
         
         this.state = {
-         user: {
-             userName: "",
-             password: "",
-             role: "admin",
-             signUp: ""
-         }, 
+        userName: "",
+        password: "",
          isOpen: true,
     }
     this.customStyles = {
@@ -46,44 +42,44 @@ export default class LoginPage extends Component {
          [e.target.name]: e.target.value
      }) 
     }
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.handleFormLogin(this.state)
+        
+    }
+    componentDidMount() {
+        this.setState({
+            userName: "",
+            password: ""
+        })
+    }
     
 
     render(){
    return(
        
        <ReactModal style={this.customStyles} isOpen={this.state.isOpen}>
-   <div className="loginPage" >
-        <form onSubmit={this.formSubmit} className="login-form" >
-        <div className="log-in-wrapper">
+        <form onSubmit={this.handleSubmit} className="login-form" >
+    
         <h1>LandLord Tenant App</h1>
         <h2>Login Page</h2>
         <input 
         type="text" 
         name="userName"
         onChange={this.handleChange} 
-        placeholder="UserName"
-        value={this.state.user.userName}        
+        placeholder="User Name"
+        value={this.state.userName}        
         />       
         <input 
         type="password" 
         name="password"        
         placeholder="Password"
-        value={this.state.user.password}
+        value={this.state.password}
         onChange={this.handleChange}
         />
         <br />
-        <input 
-        type="checkbox" 
-        name="checkbox"        
-        placeholder="Signup"
-        value={this.state.user.signUp}
-        onChange={this.handleChange}
-        />
-       <br />
-        <button className="btn" type="submit">Sign In</button>
-        </div>
+        <button className="btn" type="submit">Sign In</button> 
         </form>
-  </div>
         </ReactModal>
    )
     }

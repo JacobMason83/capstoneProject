@@ -1,22 +1,31 @@
-import React, { useState }  from 'react'
+import React, { Component }  from 'react'
 import NavBar from '../Navigation/navBar'
 import LoginPage from '../loginPage'
 
-const DashBoard = props => {
-    const [user, setUser] = useState('Admin')
-    const [loggedIn, setLoggedIn] = useState(false)
+export default class DashBoard extends Component {
+    constructor(props) {
+        super()
+        this.state = {
+            user: "",
+            loggedIn: false
+        }
+    }
 
     
+     handleFormLogin = () => {
+        console.log("login from dashboard")
+    }
+    
         
         
     
-    // const setDashBoard = user === "Admin"  ? user : setUser("user")
     
+    render() {
     return(
         <div>
         <NavBar 
-        user={user === "user" ? user : setUser("Admin")}>
-        <LoginPage loginIsOpen={loggedIn} />
+        user={this.state.user === "user" ? this.state.user : this.setState({user: "admin"})}>
+        <LoginPage loginIsOpen={this.state.loggedIn} handleFormLogin={this.handleFormLogin} />
         </NavBar>
             
                 
@@ -24,8 +33,9 @@ const DashBoard = props => {
         
     )
 }
+}
     
 
 
 
-export default DashBoard;
+

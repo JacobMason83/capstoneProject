@@ -5,14 +5,15 @@ export default class NavBar extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      user: this.props.user,
-      loggedIn: this.props.loggedIn
+      user: 'admin',
+      loggedIn: false
     }
   }
   authorizedUser = () => {
-    if (this.state.user === 'Admin') {
-      return (
-        <div>
+    
+    if (this.state.user === 'admin') {
+      return [
+        <div key="admin">
           <div className='nav-wrapper'>
             <NavLink
               to='/portfolio'
@@ -32,7 +33,8 @@ export default class NavBar extends Component {
             </NavLink>
           </div>
         </div>
-      )
+      
+    ]
     }
   }
 
