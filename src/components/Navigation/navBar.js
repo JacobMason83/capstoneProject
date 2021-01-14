@@ -3,13 +3,16 @@ import { NavLink } from 'react-router-dom'
 
 
 
+
 export default class NavBar extends Component {
 
-   constructor() {
-     super()
+   constructor(props) {
+     super(props)
     this.state = {        
         userDashboard: true,
-        adminDashBoard: false
+        adminDashBoard: false,
+        loggedIn: this.props.loggedIn
+
     }
    }
 
@@ -35,6 +38,7 @@ export default class NavBar extends Component {
         <div className="nav-wrapper">
             <NavLink to='/pay-rent' activeClassName="active" className="nav-link">Pay Rent</NavLink> 
         </div>
+        
         </div>
    </div>
    )

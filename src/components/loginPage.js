@@ -26,7 +26,9 @@ export default class LoginPage extends Component {
     componentWillUnmount() {
         this.clearHandleChange
     }
-     formSubmit = () => {        
+     formSubmit = () => {
+         
+                 
     }
 
     render(){
