@@ -1,10 +1,23 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import '../style/main.scss'
-import LoginPage from './loginPage'
-import NavBar from './Navigation/navBar'
+
+
+
 import DashBoard from './dashboard/dashBoard'
-import Home from './pages/home'
+import MaitanenceRequest from './pages/maitanenceRequests'
+
+// TODO 
+// add routes for messaging, maitanence requests
+// portfolio , add remove tenants, for admin 
+// add payrent functionality and routes 
+// create backend and connect to it 
+// use express backend
+// finalize color scheme and get variable page
+// refactor some code into mixins 
+// create a footer page 
+// if user or landlord is logged in then will display on the sidebar
+// create a add/remove tenant page with dropzone functionality for images, and leases etc 
 
 export default class App extends Component {
   constructor () {
@@ -19,11 +32,13 @@ export default class App extends Component {
     return (
       <div className='app-wrapper'>
         <Router>
-          <NavBar />
-          <div>
-           <Route exact path="/" component={LoginPage} />
-           <Route path="/dashboard" component={DashBoard} />
-          </div>
+          <DashBoard />
+
+          <Switch>
+           <Route exact path="/" component={DashBoard} />
+           <Route path="/maitenance-requests" component={MaitanenceRequest} />
+           </Switch>
+         
         </Router>
       </div>
     )
