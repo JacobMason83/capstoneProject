@@ -1,19 +1,4 @@
-.hero-side-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 1.5em;
-    .side-bar {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100vh;
-        background-color: midnightblue;
-        margin-top: -10px;
-        a {
-
-            text-decoration: none;
-            color: white;
-        }
-    }
+.dashboard-container {
+   display: grid;
+   grid-template:1fr 1fr ;
 }

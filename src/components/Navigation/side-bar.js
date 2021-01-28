@@ -30,7 +30,7 @@ import { RiHomeHeartLine } from "react-icons/ri";
   };
 
   return (
-    <div>
+    
       <div id="header">
           {/* collapsed props to change menu size using menucollapse state */}
         <ProSidebar collapsed={menuCollapse}>
@@ -87,7 +87,7 @@ import { RiHomeHeartLine } from "react-icons/ri";
           </SidebarFooter>
         </ProSidebar>
       </div>
-    </div>
+    
   );
 };
 

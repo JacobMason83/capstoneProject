@@ -4,8 +4,10 @@ import '../style/main.scss'
 
 
 
+
 import DashBoard from './dashboard/dashBoard'
-import MaitanenceRequest from './pages/maitanenceRequests'
+import Request from './pages/requests'
+import LandingPage from './pages/landingPage'
 
 // TODO 
 // add routes for messaging, maitanence requests
@@ -20,11 +22,12 @@ import MaitanenceRequest from './pages/maitanenceRequests'
 // create a add/remove tenant page with dropzone functionality for images, and leases etc 
 
 export default class App extends Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
     this.state = {
-      user: 'Admin',
+      user: 'admin',
       loggedIn: true,
+      modalIsOpen:false
       
     }
   }
@@ -32,11 +35,12 @@ export default class App extends Component {
     return (
       <div className='app-wrapper'>
         <Router>
-          <DashBoard />
+          
 
           <Switch>
-           <Route exact path="/" component={DashBoard} />
-           <Route path="/maitenance-requests" component={MaitanenceRequest} />
+           <Route exact path="/" component={LandingPage} />
+           <Route exact path="/dashboard" component={DashBoard} />
+           <Route path="/requests" component={Request} />
            </Switch>
          
         </Router>

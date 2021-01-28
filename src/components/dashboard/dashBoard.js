@@ -2,7 +2,7 @@ import React, { Component }  from 'react'
 import NavBar from '../Navigation/navBar'
 // import FormModal from './loginModal'
 import SideBar from '../Navigation/side-bar'
-import MaitanenceRequest from '../pages/maitanenceRequests'
+import Request from '../pages/requests'
 // TODO
 // add login functionality for user or admin so that it will add admin buttons to the page
 
@@ -48,13 +48,16 @@ export default class DashBoard extends Component {
     render() {
     return(
         <div >
-        
+        <div className="dashboard-container">
         <NavBar />
         <SideBar  />
-        <MaitanenceRequest />
+        <Request modalIsOpen={this.state.modalIsOpen} />
+      
         
-            
-                
+        
+
+         
+        </div>
            </div>
         
     )
