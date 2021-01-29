@@ -11,7 +11,9 @@ export default class DashBoard extends Component {
         super(props)
         this.state = {            
             modalIsOpen: false,
-            user : "user"
+            user : props.role,
+            logged_In: props.loggedIn,
+            userName: props.userName
           }
         this.divStyles= {           
                 display: 'flex',
@@ -24,22 +26,7 @@ export default class DashBoard extends Component {
 }
 
     
-     handleFormLogin = () => {
-         const { userName, password } = this.props
-        if(userName === 'jacob' && password === "1234") {
-            this.setState({
-                user: "admin",
-                modalIsOpen:false
-                
-            })
-        } else {
-            this.setState({
-                user: "user",
-                modalIsOpen: false
-                
-            })
-        }
-    }
+    
     
     
         
@@ -50,7 +37,7 @@ export default class DashBoard extends Component {
         <div >
         <div className="dashboard-container">
         <NavBar />
-        <SideBar  />
+        <SideBar userName={this.state.userName}  />
         <Request modalIsOpen={this.state.modalIsOpen} />
       
         

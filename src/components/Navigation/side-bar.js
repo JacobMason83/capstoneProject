@@ -21,13 +21,15 @@ import { RiHomeHeartLine } from "react-icons/ri";
   const SideBar = (props) => {
           //create initial menuCollapse state using useState hook
     const [menuCollapse, setMenuCollapse] = useState(false)
-    const [name, setName] = useState('Jacob') 
+    const [name, setName] = useState('') 
+    const [role, setRole ] = useState('')
 
     //create a custom function that will change menucollapse state from false to true and true to false
   const menuIconClick = () => {
     //condition checking to change state from true to false and vice versa
     menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
   };
+
 
   return (
     
@@ -61,7 +63,7 @@ import { RiHomeHeartLine } from "react-icons/ri";
             > Messaging
             </NavLink></MenuItem>
               <MenuItem icon={<ImUserPlus />}><NavLink
-              to='/maitenance-requests'
+              to='/requests'
               activeClassName='active'
               className='nav-link'
             > Maitenance Requests
@@ -78,11 +80,13 @@ import { RiHomeHeartLine } from "react-icons/ri";
               className='nav-link'
             > DashBoard
             </NavLink></MenuItem>
+         
             </Menu>
           </SidebarContent>
           <SidebarFooter>
             <Menu iconShape="square">
               <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+
             </Menu>
           </SidebarFooter>
         </ProSidebar>
@@ -95,14 +99,9 @@ export default SideBar;
 
 
 
-// dynamicLinks = (route, linkText) => {
-//     return (
-//       <div className='nav-wrapper'>
-//         <NavLink to={route} activeClassName='active' className='nav-link-'>
-//           {linkText}
-//         </NavLink>
-//       </div>
-//     )
-//   }
+
+  
+    
+  
   
 
