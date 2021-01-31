@@ -22,7 +22,7 @@ import { RiHomeHeartLine } from "react-icons/ri";
           //create initial menuCollapse state using useState hook
     const [menuCollapse, setMenuCollapse] = useState(false)
     const [name, setName] = useState('') 
-    const [role, setRole ] = useState('')
+    
 
     //create a custom function that will change menucollapse state from false to true and true to false
   const menuIconClick = () => {

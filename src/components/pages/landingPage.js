@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-
-import auth from '../../auth/auth'
 import DashBoard from '../dashboard/dashBoard';
 import FormModal from '../dashboard/loginModal'
 

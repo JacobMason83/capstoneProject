@@ -1,14 +1,8 @@
-:root {
-    margin: 0;
-    font-family: 'Fira Sans', sans-serif;
-}
+
 body {
-    background-color: #6699dd;
     margin: 0;
     object-fit: cover;
-    .container {
-    display: flex;
-    justify-content: center;
-    background-color: darkblue;
-}
+    position: absolute;
+    color: white;   
+    background-image: url('./images/body-bg.jpg') ;
 }

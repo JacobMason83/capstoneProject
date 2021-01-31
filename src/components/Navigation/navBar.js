@@ -7,23 +7,30 @@ const NavBar = () => {
   const [role, setRole] = useState('owner')
   const dynamicLinks = (route, linkText) => {
     return (
-      <div className="nav-wrapper">
-      <Link to={route} className='owner-links'>
+      <Link to={route} className='nav-links'>
         {linkText}
       </Link>
-      </div>
+      
     )
   }
   return (
-    <div className="nav-container">
-      <h1>Landlord Tenant App </h1>
-      {role === 'owner' ? (
-              dynamicLinks('/addRemoveTenants', 'Add Remove Tenants')
+    <div className="nav-container">     
+    <div className="nav-links-wrapper">          
+      <h1 className='nav-header'>Landlord Tenant App </h1>
+        <Link to='/dashboard' className='nav-links'>Home</Link>
+        <Link to='/pay-rent' className='nav-links'>Pay Rent</Link>
+        <Link to='/requests' className='nav-links'>Maintenance Requests</Link>
+        <Link to='/messages' className='nav-links'>Messages</Link>
+        {role === 'owner' ? (
+              dynamicLinks('/add-homes', 'Add Homes and Tenants')
             ):null}
             {role === 'owner' ? (
-              dynamicLinks('/portfolio', 'Homes')
+              dynamicLinks('/home-showPage', 'Homes')
             ):null}
+      </div>
+
     </div>
+   
   )
 }
 

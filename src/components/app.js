@@ -8,6 +8,8 @@ import '../style/main.scss'
 import DashBoard from './dashboard/dashBoard'
 import Request from './pages/requests'
 import LandingPage from './pages/landingPage'
+import AddHomes from './pages/add-homes'
+import HomeShowPage from './pages/homes-show-page'
 
 // TODO 
 // add routes for messaging, maitanence requests
@@ -27,24 +29,26 @@ export default class App extends Component {
     this.state = {
       user: 'admin',
       loggedIn: true,
-      modalIsOpen:false
+    modalIsOpen:true
       
     }
   }
   render () {
-    return (
-      <div className='app-wrapper'>
-        <Router>
-          
-
+    return (      
+        <Router>    
+        <DashBoard />
           <Switch>
            <Route exact path="/" component={LandingPage} />
            <Route exact path="/dashboard" component={DashBoard} />
-           <Route path="/requests" component={Request} />
+           <Route path="/requests" 
+            component={Request}
+           />
+           <Route path='/add-homes' component={AddHomes} />
+           <Route path='/home-showPage' component={HomeShowPage} />
            </Switch>
          
         </Router>
-      </div>
+      
     )
   }
 }
