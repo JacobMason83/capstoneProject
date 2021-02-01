@@ -2,8 +2,8 @@
 body {
     margin: 0;
     object-fit: cover;
-    background-size: auto;
-    
+    overflow: scroll;   
+    font-weight: 900;
     position: absolute;
     color: white;   
     background-image: url('./images/body-bg.jpg') ;

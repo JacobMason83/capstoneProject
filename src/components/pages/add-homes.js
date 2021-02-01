@@ -13,7 +13,7 @@ export default class AddHomes extends Component {
       address: '',
       value: '',
       renter: '',
-      image: 'https://unsplash.com/s/photos/random-house'
+      image: 'https://source.unsplash.com/user/erondu'
     }
   }
 

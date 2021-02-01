@@ -12,6 +12,7 @@ export default function ShowAllRequests(props) {
                     <div className="heading">
                     <h1>{item.renter}</h1>
                     <h2>{item.address}</h2>
+                    
                     </div>
                     <div className="content">
                     <p>{item.description}</p>

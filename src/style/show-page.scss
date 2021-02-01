@@ -1,5 +1,33 @@
 .show-page-properties {
     position: fixed;
-    top: 0px;
+    top: 100px;
     left: 350px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;  
+    
+    background-color:rgba(23,12,138,1);
+    .property-item-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .property-item-card-wrapper {
+             
+       text-align: center;
+       border: 2px solid black;
+       .image-wrapper{
+            width: 100%;
+            img {
+                width: 50%;
+            }
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            ;
+        }
+    }
 }
