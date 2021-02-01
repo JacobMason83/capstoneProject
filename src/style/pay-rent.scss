@@ -8,8 +8,7 @@
     flex-direction: column;
     width: 50vw;
     height: 50vh;
-    background: rgb(31,31,52);
-    background: radial-gradient(circle, rgba(31,31,52,1) 0%, rgba(32,37,46,0.91290283203125) 35%, rgba(23,12,138,1) 100%);
+    @include bg-guide();
     .content-wrapper {
         display: flex;
         flex-direction: column;
@@ -24,7 +23,7 @@
         .btn {
             @include btn-guide();
             margin-top: 15px;
-            height: 30px;
+            
         }
     }
 }

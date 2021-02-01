@@ -19,17 +19,23 @@
         border: 3px solid black;
         height: 100%;
         width: 50%;
-        background: rgb(33,31,52);
+        @include bg-guide();
         h1 {
             text-align: center;
         }
-        background: radial-gradient(circle, rgba(33,31,52,1) 0%, rgba(32,42,46,0.91290283203125) 35%, rgba(12,60,138,1) 100%);
+        
         input {
+            @include input-guide();
             width: 50%;
             height: 50px;
         }
         textarea {
+            @include input-guide();
             width: 50%;
+        }
+        .btn {
+            @include btn-guide();
+            width: 100px;
         }
     }
 }

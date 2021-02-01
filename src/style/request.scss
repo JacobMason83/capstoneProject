@@ -7,7 +7,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     width:50%;
     height: auto;
-    background-color: rgba(23,12,138,1);
+    @include bg-guide();
     .request-card {
         display:grid;
         grid-template-rows: 1fr 1fr 1fr;

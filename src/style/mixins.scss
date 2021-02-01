@@ -1,15 +1,25 @@
+$button-bg-color: #19508f;
+$bg-hover: #71b2e7;
+
 @mixin btn-guide {
+    background-color:$button-bg-color;
+    color:white;
+    width: 50%;
+    height: 45px;
+    border-radius: 100px;
     border: 3px solid black;
-    border-radius: 10px;
-    background-color:#1565C0;
-    color: white;
-    width: 100px;
     &:hover {
-        background: #90CAF9 ;
-}
+        background-color: $bg-hover;
+        color:black;
+    }
+    @content;
 }
 @mixin input-guide {
     border-radius:10px;  
     height: 30px; 
     border:2px solid black  
+}
+@mixin bg-guide {
+    background: rgb(31,31,52);
+        background: radial-gradient(circle, rgba(31,31,52,1) 0%, rgba(32,37,46,0.91290283203125) 35%, rgba(23,12,138,1) 100%);
 }

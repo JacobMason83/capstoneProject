@@ -53,18 +53,10 @@
 
     
         .btn {
-            background-color:#1565C0;
-            color:white;
-            width: 50%;
-            height: 45px;
-            border-radius: 100px;
-            border: 3px solid black;
-            &:hover {
-                background-color: #90CAF9;
-                color:black;
+           @include btn-guide();
             
         }
          
-}
+
     }
 }

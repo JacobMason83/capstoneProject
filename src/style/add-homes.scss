@@ -9,8 +9,7 @@
         justify-content: center;
         align-items: center;
         height: 60vh;
-        background: rgb(31,31,52);
-        background: radial-gradient(circle, rgba(31,31,52,1) 0%, rgba(32,37,46,0.91290283203125) 35%, rgba(23,12,138,1) 100%);
+        @include bg-guide();
         .input-wrapper {
            margin-bottom: 15px;
            margin-top: 15px;
@@ -24,15 +23,9 @@
            }
         }
         .btn {
-            border: 3px solid black;
-            border-radius: 10px;
-            background-color:#1565C0;
-            color: white;
+            @include btn-guide();
             width: 100px;
-            height: 50px;
-            &:hover {
-             background: #90CAF9 ;
         }
-    }
+    
   }
 }

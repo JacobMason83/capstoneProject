@@ -9,10 +9,10 @@ const LandingPage = (props) => {
    const [role, setRole ] = useState('')
    const [loggedIn, setLoggedIn ] =useState(false)
    const formLogin = (data) => {
-       console.log(data)       
+      const { username, role } = data      
     setModalIsOpen(false)
-    setUsername(data.username)
-    setRole(data.role)
+    setUsername(username)
+    setRole(role)
     setLoggedIn(true)
    }
    return(
