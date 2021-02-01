@@ -11,6 +11,7 @@ import LandingPage from './pages/landingPage'
 import AddHomes from './pages/add-homes'
 import  HomeShowPage  from './pages/home-show-page'
 import RequestShowPage from './pages/showRequests'
+import PayRent from './pages/payRent'
 
 // TODO 
 // add routes for messaging, maitanence requests
@@ -45,6 +46,7 @@ export default class App extends Component {
            <Route path='/add-homes' component={AddHomes} />
            <Route path='/home-showpage' component={HomeShowPage} />
            <Route path="/showRequests" component={RequestShowPage} />
+           <Route path="/pay-rent" component={PayRent} />
            </Switch>
          
         </Router>

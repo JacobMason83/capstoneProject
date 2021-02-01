@@ -1,4 +1,4 @@
-@import 'react-pro-sidebar/dist/scss/styles.scss';
+@import './mixins.scss';
 @import './side-bar.scss';
 @import './base.scss';
 @import './loginModal.scss';
@@ -9,4 +9,6 @@
 @import'./request.scss';
 @import './show-page.scss';
 @import './add-homes.scss';
+@import './pay-rent.scss';
+
 
