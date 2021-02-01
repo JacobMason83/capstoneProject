@@ -2,7 +2,10 @@
 body {
     margin: 0;
     object-fit: cover;
+    background-size: auto;
+    overflow: hidden;
     position: absolute;
     color: white;   
     background-image: url('./images/body-bg.jpg') ;
+    font-family: 'Fira Sans Serif', 'sans serif';
 }

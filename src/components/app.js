@@ -39,7 +39,7 @@ export default class App extends Component {
         <DashBoard />
           <Switch>
            <Route exact path="/" component={LandingPage} />
-           <Route exact path="/dashboard" component={DashBoard} />
+           
            <Route path="/requests" 
             component={Request}
            />
