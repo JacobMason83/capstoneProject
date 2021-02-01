@@ -3,8 +3,9 @@ import React, { useState }  from 'react'
 // bring in for owner maitance requests
 // bring in for owner payments made 
 // bring in for owner messages made to them 
-// bring in messages for user 
+// bring in messages for user if there  
 // bring in user data to be shown on the page 
+
 const Home = (props) => {
     return(
         <div>

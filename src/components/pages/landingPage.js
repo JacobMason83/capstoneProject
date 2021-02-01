@@ -1,25 +1,38 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import DashBoard from '../dashboard/dashBoard';
 import FormModal from '../dashboard/loginModal'
 
 
-const LandingPage = (props) => {
-   const [modalIsOpen, setModalIsOpen ] = useState(true)
-   const [username, setUsername ] = useState('')
-   const [role, setRole ] = useState('')
-   const [loggedIn, setLoggedIn ] =useState(false)
-   const formLogin = (data) => {
-      const { username, role } = data      
-    setModalIsOpen(false)
-    setUsername(username)
-    setRole(role)
-    setLoggedIn(true)
+export default class LandingPage extends Component {
+   constructor() {
+      super()
+      this.state ={
+         modalIsOpen : true,
+          username: '',
+          role: '',
+          loggedIn: false
+      }
    }
-   return(
-   <div> 
-   <DashBoard modalIsOpen={modalIsOpen} userName={username} role={role} loggedIn={loggedIn} />
-    <FormModal modalIsOpen={modalIsOpen} formLogin={formLogin}/>
-  </div>
-   )
-}   
-export default LandingPage
+   formLogin = (data) => {
+      const { username, role } = data      
+      this.setState({
+         modalIsOpen: false,
+         username: username,
+         role: role,
+         loggedIn: true
+      })
+
+      }
+   
+   render() {
+      const { role, loggedIn, username} = this.state
+
+      return(
+      <div> 
+      <DashBoard  username={username} role={role} loggedIn={loggedIn} />
+       <FormModal modalIsOpen={this.state.modalIsOpen} formLogin={this.formLogin}/>
+     </div>
+      )
+      
+}  
+} 

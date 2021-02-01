@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-
+//Todo get the user data 
 
 const NavBar = () => {
   const [role, setRole] = useState('owner')

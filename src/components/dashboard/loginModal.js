@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import ReactModal from 'react-modal'
 import logoImg from '../../style/images/ltApp.png'
 ReactModal.setAppElement('.app-wrapper')
-
+//TODO get the state from login modal to the dashboard for use throught the app and keep it persistant
 export default class FormModal extends Component {
   constructor (props) {
     super(props)
@@ -40,12 +40,16 @@ export default class FormModal extends Component {
   handleLogIn = () => {
       const {username, password} = this.state
     axios
-      .get('http://localhost:4000/login', {
+      .post('http://localhost:4000/login', {
           username: username,
           password: password
       })
-      .then(res => res.json())
-      .then(data => console.log(data))
+      .then((res) => {
+        this.setState({
+        username: res.data.username,
+        role: res.data.role
+        })
+      })
       .catch(err => console.error(err))
   }
   handleRegister = () => {
@@ -57,25 +61,25 @@ export default class FormModal extends Component {
           role: role
       }, 
       {withCredentials: true})      
-      .then(data => this.props.formLogin(data) )
+      .then(res => this.props.formLogin(res.data) )
       .catch(err => console.error(err))
   }
   handleSubmit = e => {
     e.preventDefault()
     const { username, password,role } = this.state
-    if ([e.target.name] === 'login') {
+    if (e.target.name === 'login') {
       this.handleLogIn(username, password)
     } else {
       this.handleRegister(username, password, role)
     }
-
-    this.setState({
-      username: '',
-      password: '',
-      submit: 'Sign In',
-      signUp: false
-    })
-  }
+    this.props.formLogin(this.state)
+  //   this.setState({
+  //     username: '',
+  //     password: '',
+  //     submit: 'Sign In',
+  //     signUp: false
+  //   })
+   }
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -130,13 +134,13 @@ export default class FormModal extends Component {
                 Sign Up
               </button>
 
-              <button className='btn' type='submit' name="login" >
+              <button className='btn' onClick={this.handleSubmit} name="login" >
                 Log In
               </button>
 
               <button
                 className='btn'
-                type='submit'
+                onClick={this.handleSubmit}
                 name="register"                
               >
                 Register
