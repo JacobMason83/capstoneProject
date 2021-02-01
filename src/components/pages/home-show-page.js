@@ -1,43 +1,42 @@
-import React, { useEffect, useState } from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
-const HomeShowPage = () => {
-    const [homes, setHomes] = useState([])
+import PropertyItem from '../user/property'
+export default class HomeShowPage extends Component  {
+    constructor() {
+        super()
+        this.state = {
+            homes: []
+        }
+    }
 
   //0: {id: "60171abd19459709748cc33a", propertyName: "Test Property", address: "123 test land ", value: 500000, renter: "Test dude ", …
 
     
     
-     useEffect(() => {
-        axios
-        .get('http://localhost:4000/allHomes', { withCredentials: true })  
-        .then(res => setHomes(res.data))
-        .catch(err => console.error(err)) 
+     componentDidMount() {
+         axios
+         .get('http://localhost:4000/allHomes', { withCredentials: true })  
+         .then(res => this.setState({
+             homes: res.data
+         }))
+         .catch(err => console.error(err)) 
+
+     }
          
-     }, [])
-    return (
-        
-        <div className="show-page-properties">                
-            {homes.map(home => {
-               return (
-             <div key={home.id}>
-                <h1>{home.propertyName}</h1>    
-                <h2>{home.address}</h2>
-                <h2>{home.renter}</h2>
-                <h2>{home.value}</h2>
-                  </div>
+     render() {
+         return (
+             
+             <div className="show-page-properties">                
+                 <PropertyItem homes={this.state.homes} />
+     
+                       
+             </div>
+         )
 
-               ) 
-
-            })}
-           
-         
-
-            
-        </div>
-    )
+     }
 }
 
-export default HomeShowPage
+
 
 
 

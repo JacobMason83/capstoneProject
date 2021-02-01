@@ -9,7 +9,7 @@ import DashBoard from './dashboard/dashBoard'
 import Request from './pages/requests'
 import LandingPage from './pages/landingPage'
 import AddHomes from './pages/add-homes'
-import { HomeShowPage } from './pages/home-show-page'
+import  HomeShowPage  from './pages/home-show-page'
 import RequestShowPage from './pages/showRequests'
 
 // TODO 

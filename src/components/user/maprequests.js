@@ -5,7 +5,7 @@ export default function ShowAllRequests(props) {
     const items = props.needToBeFixed
 
    return(
-   <div> 
+   <div className="request-wrapper"> 
         {items.map(item => {
             return(
                 <div key={item.id} className='request-card'>
