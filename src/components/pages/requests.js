@@ -1,8 +1,8 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
 
 
-
+//TODO FIX ISSUE WITH REQUEST IN HTTP BAR
 
 
 export default class  Request extends Component {
@@ -30,14 +30,27 @@ export default class  Request extends Component {
             description
         }, {withCredentials: true})
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data)
+           
+        }
+            )
         .catch(err => console.error(err))
+        
+    }
+    componentDidMount() {
+        this.setState({
+            renter: '',
+            address: '',
+            description: ''
+        })
     }
     render() {
         return(
             
             <div className="request-form" >
             <form className="form" onSubmit={this.formSubmit}>
+            <h1>Put your Maitenance Requests Here: </h1>
                 <input type="text"
                     name="renter"
                     placeholder="Name"

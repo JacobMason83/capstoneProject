@@ -2,10 +2,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 // TODO change to react dropzone and style accordingly
+// TODO CLEAR OUT AFTER IT SENDS TO DB
 // TODO add a lease dropzone if possible
 
 export default class AddHomes extends Component {
-  constructor (props) {
+  constructor() {
     super()
     this.state = {
       propertyName: '',

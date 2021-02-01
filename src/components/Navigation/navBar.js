@@ -25,7 +25,11 @@ const NavBar = () => {
               dynamicLinks('/add-homes', 'Add Homes and Tenants')
             ):null}
             {role === 'owner' ? (
-              dynamicLinks('/home-showPage', 'Homes')
+              dynamicLinks('/home-showpage', 'Property List')
+            ):null}
+            
+            {role === 'owner' ? (
+              dynamicLinks('/showRequests', 'Maintainace To Do')
             ):null}
       </div>
 

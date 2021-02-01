@@ -4,12 +4,13 @@ import '../style/main.scss'
 
 
 
-
+import Home from './pages/home'
 import DashBoard from './dashboard/dashBoard'
 import Request from './pages/requests'
 import LandingPage from './pages/landingPage'
 import AddHomes from './pages/add-homes'
-import HomeShowPage from './pages/homes-show-page'
+import { HomeShowPage } from './pages/home-show-page'
+import RequestShowPage from './pages/showRequests'
 
 // TODO 
 // add routes for messaging, maitanence requests
@@ -24,8 +25,8 @@ import HomeShowPage from './pages/homes-show-page'
 // create a add/remove tenant page with dropzone functionality for images, and leases etc 
 
 export default class App extends Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = {
       user: 'admin',
       loggedIn: true,
@@ -35,16 +36,15 @@ export default class App extends Component {
   }
   render () {
     return (      
-        <Router>    
-        <DashBoard />
+      <Router>    
+        <DashBoard  loggedIn={this.state.loggedIn} />
           <Switch>
            <Route exact path="/" component={LandingPage} />
-           
-           <Route path="/requests" 
-            component={Request}
-           />
+           <Route path='/home' component={Home} />           
+           <Route path="/requests" component={Request} />
            <Route path='/add-homes' component={AddHomes} />
-           <Route path='/home-showPage' component={HomeShowPage} />
+           <Route path='/home-showpage' component={HomeShowPage} />
+           <Route path="/showRequests" component={RequestShowPage} />
            </Switch>
          
         </Router>
