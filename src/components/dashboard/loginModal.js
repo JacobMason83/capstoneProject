@@ -4,16 +4,17 @@ import ReactModal from 'react-modal'
 import logoImg from '../../style/images/ltApp.png'
 ReactModal.setAppElement('.app-wrapper')
 //TODO get the state from login modal to the dashboard for use throught the app and keep it persistant
-export default class FormModal extends Component {
+export default class LoginModal extends Component {
   constructor (props) {
     super(props)
-    this.state = {
+    this.state = {     
       username: '',
       password: '',
       modalIsOpen: true,
       submit: 'Sign In',
       signUp: false,
-      role: "renter"
+      role: "renter",
+      loggedIn: false
     }
     this.customStyles = {
       content: {
@@ -43,12 +44,16 @@ export default class FormModal extends Component {
       .post('http://localhost:4000/login', {
           username: username,
           password: password
-      })
+      }, {withCredentials: true})
       .then((res) => {
-        this.setState({
-        username: res.data.username,
-        role: res.data.role
+        return res.data
+      }).then(results => {
+        this.props.handleSuccessfulLogin({
+          username: results.data.username,
+          role: results.data.role,
+          _id: results.data._id  
         })
+        
       })
       .catch(err => console.error(err))
   }
@@ -61,24 +66,22 @@ export default class FormModal extends Component {
           role: role
       }, 
       {withCredentials: true})      
-      .then(res => this.props.formLogin(res.data) )
+      .then(res => {
+        this.props.handleSuccessfulLogin(res.data)
+      } )
       .catch(err => console.error(err))
   }
   handleSubmit = e => {
     e.preventDefault()
-    const { username, password,role } = this.state
+    
     if (e.target.name === 'login') {
-      this.handleLogIn(username, password)
+      this.handleLogIn()
     } else {
-      this.handleRegister(username, password, role)
+      this.handleRegister()
     }
-    this.props.formLogin(this.state)
-  //   this.setState({
-  //     username: '',
-  //     password: '',
-  //     submit: 'Sign In',
-  //     signUp: false
-  //   })
+    
+    this.props.history.push('/dashboard')
+    
    }
   handleChange = e => {
     this.setState({
@@ -88,7 +91,7 @@ export default class FormModal extends Component {
 
   render () {
     return (
-      <ReactModal style={this.customStyles} isOpen={this.props.modalIsOpen}>
+      <ReactModal style={this.customStyles} isOpen={this.props.modalIsOpen} userData={this.state.user}>
         <form onSubmit={this.handleSubmit} className='login-form'>
           <div className='form-container'>
             <div className='title-wrapper'>
@@ -120,9 +123,9 @@ export default class FormModal extends Component {
                 <div className='input-wrapper'>
                 <label htmlFor="role">Own/Rent</label>
                   <input
-                    type='checkbox'
-                    placeholder='Owner'
-                    onClick={()=> this.setState({role: 'owner'})}
+                    type='text'
+                    name='role'
+                    placeholder='Owner'                    
                     value={this.state.role}
                     onChange={this.handleChange}
                   />
