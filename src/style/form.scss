@@ -1,27 +1,27 @@
-#form {
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   width: 75%;
-   input {
+// #form {
+//    display: flex;
+//    justify-content: center;
+//    flex-direction: column;
+//    width: 75%;
+//    input {
        
-       border-radius:10px;  
-       height: 30px; 
-       border:2px solid black    
+//        border-radius:10px;  
+//        height: 30px; 
+//        border:2px solid black    
               
-}
-   textarea{
-       border-radius:10px;
-       border: 2px solid black;
-}   .btn {
-    border: 3px solid black;
-    border-radius: 10px;
-    background-color:#1565C0;
-    color: white;
-    width: 100px;
-    &:hover {
-        background: #90CAF9 ;
+// }
+//    textarea{
+//        border-radius:10px;
+//        border: 2px solid black;
+// }   .btn {
+//     border: 3px solid black;
+//     border-radius: 10px;
+//     background-color:#1565C0;
+//     color: white;
+//     width: 100px;
+//     &:hover {
+//         background: #90CAF9 ;
         
-    }
-}
-}
+//     }
+// }
+// }

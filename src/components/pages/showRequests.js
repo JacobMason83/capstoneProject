@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import ShowAllRequests from '../user/maprequests'
+import ShowAllRequests from '../landlord/maprequests'
 
 
 

@@ -34,7 +34,8 @@
     .nav-links-wrapper {
       position: fixed;
       align-items: flex-start;
-      width: 25%;      
+      justify-content: start;
+      height: auto;      
       .nav-header{
         font-size: 15px;
       }

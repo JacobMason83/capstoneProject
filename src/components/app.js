@@ -12,7 +12,7 @@ import HomeShowPage from './pages/home-show-page'
 import RequestShowPage from './pages/showRequests'
 import PayRent from './pages/payRent'
 import Messaging from './pages/messaging'
-import SendMessages from './user/sendMessages'
+import SendMessages from './landlord/sendMessages'
 import axios from 'axios'
 
 // TODO

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import PropertyItem from '../user/property'
+import PropertyItem from '../landlord/property'
 export default class HomeShowPage extends Component  {
     constructor() {
         super()

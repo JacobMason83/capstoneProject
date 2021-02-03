@@ -23,8 +23,45 @@
         .message-wrapper {
             font-size: 1em;
             border-bottom: 1px solid white;
-        }
+            p{
+                font-size: 12px;
+            }
+            h6{
+                text-align: center;
+                font-size: 3px;
+            }
+          }
+        
             
+        }
+    }
+}
+@media(max-width: 768px){
+    .message-container {
+        top: 200px;
+        left: 175px;
+        width: 50%;
+        
+        .get-messages {
+           font-size:15px;
+            .message-header {
+               border-bottom: 2px solid white;
+               width: 100%;
+               
+               h1 {
+                   font-size: 15px;
+               }
+            .message-wrapper {
+              font-size: 12px;
+              p{
+                  font-size: 12px;
+              }
+              h6{
+                  font-size: 3px;
+              }
+            }
+                
+            }
         }
     }
 }

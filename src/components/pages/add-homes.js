@@ -33,8 +33,16 @@ export default class AddHomes extends Component {
           renter,
           image
       }, {withCredentials: true})
-      .then(res => res.json())
-      .then(data => console.log(data))
+      .then(res => {
+        this.setState({
+          propertyName: '',
+          address: '',
+          value: '',
+          renter: "",
+          image: ''
+        })
+      })
+      
       .catch(err => console.log(err))
   }
   render () {
