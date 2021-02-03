@@ -27,4 +27,29 @@
 }
 
     }
+@media(max-width: 768px){
+    .request-wrapper {
+        top:50px;
+        left: 100px;
+        width:50%;
+        grid-template-columns: 1fr;
+        b
+        
+        
+        
+        .request-card {
+            width:300px;
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            .heading {
+               width: 50%;
+               border:none
+            }
+            .content {            
+                width: 50%;
+            }
+    }
+    
+        }
+}
     

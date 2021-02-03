@@ -30,7 +30,7 @@ export default class  Request extends Component {
             description
         }, {withCredentials: true})
         .then(res => {
-         return res.data
+         console.log(res.data)
         })      
             
         .catch(err => console.error(err))
