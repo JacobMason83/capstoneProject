@@ -5,3 +5,8 @@
   @include bg-guide();
   height: 80vh;
 }
+@media(max-width: 768px) {
+  .dashboard-container{
+    left:100px;
+  }
+}

@@ -49,18 +49,19 @@ export default class App extends Component {
     })
   }
   
-  componentDidMount(){
+  componentWillMount(){
     const {id, role, username, } = this.state
     axios
     .post('http://localhost:4000/check-login', {
       id
     }, {withCredentials: true})
     .then(res => {
+      console.log('i did it i made it stay')
       if(res.data.message === 'logged-in') {
         this.setState({
           loggedInStatus: 'LOGGED-IN',
-          role,
-          username
+          role: this.state.role,
+          username: this.state.username
         })
       } else {
         this.setState({

@@ -21,6 +21,7 @@
       text-decoration: none;
       color: white;
       font-size:20px;
+      margin-bottom: 20px;
     }
   }  
 }
@@ -33,9 +34,14 @@
       position: none;
       align-items: flex-start;
       width: 25%;
-      font-size: 11px;
+      
       .nav-header{
         font-size: 15px;
+      }
+      font-size: 15px;
+      .nav-links {
+        font-size: 12px;
+        
       }
     }
   }
