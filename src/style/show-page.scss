@@ -1,38 +1,69 @@
 .show-page-properties {
-    position: fixed;
+    position: absolute;
     top: 100px;
-    left: 350px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;  
-    @include bg-guide();
+    left: 500px;
+    width: 100%;
+    display:grid;
+    grid-template-columns: 1fr ;
     .property-item-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-
-    .property-item-card-wrapper {
-             
-       text-align: center;
-       border: 2px solid black;
-       .image-wrapper{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 21px;
+        width: 500px;
+        text-align: center;
+        .property-wrapper {
+            @include bg-guide();
             width: 100%;
-            img {
-                width: 50%;
+            .image-wrapper {
+                width: 100%;
+                border-bottom: none;
+                img {
+                    width: 100%;
+                    border-bottom: none;
+                }
+            
+            }
+            .content {
+                font-size: 20px;
+                border-top:2px solid white;
+                h1 {
+                    font-size: 20px;
+                }
             }
         }
-        .content {
-            display: flex;
-            
-            ;
-        }
+}
+}
+@media (max-width: 768px){
+    .show-page-properties {
+       
+        left: 170px;
+       
+        .property-item-container {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 21px;
+            width: 200px;
+            text-align: center;
+            .property-wrapper {
+                @include bg-guide();
+                width: 100%;
+                .image-wrapper {
+                    width: 100%;
+                    border-bottom: none;
+                    img {
+                        width: 100%;
+                        border-bottom: none;
+                    }
+                
+                }
+                .content {
+                    font-size: 15px;
+                    border-top:2px solid white;
+                    h1 {
+                        font-size: 15px;
+                    }
+                }
+            }
     }
 }
-@media screen and (max-width: 768px){
-    .show-page-properties{
-        display: grid;
-        grid-template-columns: 1fr;
-    }
 }

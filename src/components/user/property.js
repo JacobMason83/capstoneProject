@@ -8,24 +8,26 @@ const PropertyItem = (props) => {
 
 {propertyItems.map(item => {
     return (
-        <div key={item.id}>
-            <div className="property-item-card-wrapper">
+        <div key={item.id} className='property-wrapper'>
+            
             <div className="image-wrapper">
                 <img src={item.image} alt="logo"/>
                 <hr />
             </div>
             <div className="content">
-                <h1>{item.propertyName}</h1>
-                <h2>{item.address}</h2>
-                <h2>{item.value}</h2>                
+                <h1>Property Name:{item.propertyName}</h1>
+                <hr />
+                <h2>Address:{item.address}</h2>
+                <hr />
+                <h2>Value:{item.value}</h2>                
                 </div>                              
                 <div className="content">
-                <h1>{item.renter}</h1>
+                <h1>Renter:{item.renter}</h1>
                 </div>
 
             </div>               
             
-        </div>
+        
     )
 })}
 
