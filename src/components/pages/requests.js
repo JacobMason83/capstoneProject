@@ -30,23 +30,19 @@ export default class  Request extends Component {
             description
         }, {withCredentials: true})
         .then(res => {
-            this.setState({
-                renter: '',
-                address: '',
-                description: ''
-            })
+         return res.data
         })      
             
         .catch(err => console.error(err))
         
     }
-    // componentDidMount() {
-    //     this.setState({
-    //         renter: '',
-    //         address: '',
-    //         description: ''
-    //     })
-    // }
+    componentDidMount() {
+        this.setState({
+            renter: '',
+            address: '',
+            description: ''
+        })
+    }
     render() {
         return(
             

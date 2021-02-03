@@ -2,4 +2,6 @@
   position: fixed;
   top: 150px;
   left: 500px;
+  @include bg-guide();
+  height: 80vh;
 }

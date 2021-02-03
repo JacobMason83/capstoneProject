@@ -7,20 +7,25 @@ import React, {useEffect, useState, Fragment} from 'react'
 
 const DashBoard = props => {
   const [users , setUsers] = useState({
-    username: props.username ||'',
-    loggedIn: props.loggedIn ||'',
-    role: props.role||''
+    username: '',
+    loggedIn:  '',
+    role: ''
   })
+
   useEffect(()=> {
     setUsers({
       username: props.username,
       loggedIn: props.loggedIn,
       role: props.role
     })
-  })
+    }, [] )
+
   return (
     <div className='dashboard-container'>
+      <h1>
       hi {users.username}
+      <p> Thanks for Joining our Community and appreciate the continued support</p>
+      </h1>
     </div>
   )
 }

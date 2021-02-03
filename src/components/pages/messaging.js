@@ -13,7 +13,7 @@ const Messaging = (props) => {
         .get(`http://localhost:4000/messages/${username}`, {withCredentials: true})
         .then(res => {
             setData(res.data)
-            return res.data
+            
         })        
         .catch(err => console.error(err))
         

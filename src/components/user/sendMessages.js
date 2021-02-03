@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import axios from 'axios'
 
 //TODO pull in user id and get messages by id 
@@ -30,7 +30,7 @@ const SendMessages = props => {
             <div className="form-wrapper">
                 <div className="content-wrapper">
                 <h1>Send your messages here </h1>
-                <label htmlFor='userName'>To</label>
+                <label htmlFor='userName'>T</label>
                 <input
                   type='text'
                   name='username'

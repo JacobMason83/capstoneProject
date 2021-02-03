@@ -24,3 +24,18 @@
     }
   }  
 }
+@media (max-width: 768px){
+  .nav-container {
+    position: none;
+    width: 200px;
+    height: 100%;
+    .nav-links-wrapper {
+      position: none;
+      align-items: flex-start;
+      width: 25%;
+      .nav-header{
+        font-size: 16px;
+      }
+    }
+  }
+}

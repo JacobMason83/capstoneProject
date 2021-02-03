@@ -13,6 +13,7 @@ import RequestShowPage from './pages/showRequests'
 import PayRent from './pages/payRent'
 import Messaging from './pages/messaging'
 import SendMessages from './user/sendMessages'
+import axios from 'axios'
 
 // TODO
 // add routes for messaging, maitanence requestsxxx
@@ -34,7 +35,8 @@ export default class App extends Component {
       role: '',
       loggedInStatus: 'NOT_LOGGED_IN',
       modalIsOpen: true,
-      id: ""
+      id: "",
+      
     }
   }
   handleSuccessfulLogin = data => {
@@ -46,15 +48,43 @@ export default class App extends Component {
       id: data.id
     })
   }
+  
+  componentDidMount(){
+    const {id, role, username, } = this.state
+    axios
+    .post('http://localhost:4000/check-login', {
+      id
+    }, {withCredentials: true})
+    .then(res => {
+      if(res.data.message === 'logged-in') {
+        this.setState({
+          loggedInStatus: 'LOGGED-IN',
+          role,
+          username
+        })
+      } else {
+        this.setState({
+          loggedInStatus: 'NOT-LOGGED-IN'
+        })
+        this.props.history.push('/')
+      }
+      
+    }) 
+  }
 
   render () {
     return (
       <Router>
-        <NavBar
-          username={this.state.username}
-          role={this.state.role}
-          loggedIn={this.state.loggedInStatus}
-        />
+       
+          
+            <NavBar            
+            userName={this.state.username}
+            roles={this.state.role}        
+            />
+
+         
+          
+        
         <Switch>
           <Route
             exact
