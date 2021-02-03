@@ -30,7 +30,7 @@ const SendMessages = props => {
             <div className="form-wrapper">
                 <div className="content-wrapper">
                 <h1>Send your messages here </h1>
-                <label htmlFor='userName'>T</label>
+                <label htmlFor='userName'>To:</label>
                 <input
                   type='text'
                   name='username'

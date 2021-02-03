@@ -32,3 +32,33 @@
         }
     }
 }
+@media(max-width: 768px){
+    .message-form {
+        top:10px;
+        left:100px;
+        width: 500px;
+        
+        height: auto;
+        
+        .form-wrapper {
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            
+            .content-wrapper{
+                h1 {
+                    font-size: 25px;
+                }
+                input {
+                    @include input-guide();
+                }
+                textarea {
+                    width: 100%
+                }
+            }
+            .message-btn {
+              margin-top:15px;
+            }
+        }
+    }
+}
