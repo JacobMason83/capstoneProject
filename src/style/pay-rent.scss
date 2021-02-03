@@ -28,3 +28,28 @@
         }
     }
 }
+@media(max-width: 768px) {
+    .rent-form {
+        position: fixed;
+        top: 100px;
+        left: 170px;        
+        width: 300px;
+        h1 {
+            font-size:20px;
+        }
+        
+        @include bg-guide();
+        .content-wrapper {
+           font-size: 20px;
+            input {
+               height: 20px;
+            }
+            .btn {
+                @include btn-guide();
+                width: 100px;
+                margin-top: 15px;
+                
+            }
+        }
+    }
+}

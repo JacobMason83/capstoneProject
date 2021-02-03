@@ -29,9 +29,10 @@ export default class LoginModal extends Component {
         bottom: 'auto',
         color: 'white',
         transform: 'translate(-50%, -50%)',
-        width: '700px',
+        width: '500px',
         height: '80vh',
-        boxShadow: '10px 13px 14px 5px rgba(0,0,0,1.75)'
+        boxShadow: '10px 13px 14px 5px rgba(0,0,0,1.75)',
+        overflow: 'hidden'
       },
       overlay: {
         backgroundColor: 'transparent'
@@ -98,7 +99,7 @@ export default class LoginModal extends Component {
 
   render () {
     return (
-      <ReactModal style={this.customStyles} isOpen={this.props.modalIsOpen} userData={this.state.user}>
+      <ReactModal style={this.customStyles}  isOpen={this.props.modalIsOpen} userData={this.state.user}>
         <form onSubmit={this.handleSubmit} className='login-form'>
           <div className='form-container'>
             <div className='title-wrapper'>
