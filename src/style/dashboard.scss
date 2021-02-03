@@ -1,4 +1,5 @@
 .dashboard-container {
-   display: grid;
-   grid-template:1fr 1fr ;
+  position: fixed;
+  top: 150px;
+  left: 500px;
 }

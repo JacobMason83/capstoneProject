@@ -7,9 +7,9 @@ import React, {useEffect, useState, Fragment} from 'react'
 
 const DashBoard = props => {
   const [users , setUsers] = useState({
-    username: '',
-    loggedIn: '',
-    role: ''
+    username: props.username ||'',
+    loggedIn: props.loggedIn ||'',
+    role: props.role||''
   })
   useEffect(()=> {
     setUsers({
@@ -17,10 +17,10 @@ const DashBoard = props => {
       loggedIn: props.loggedIn,
       role: props.role
     })
-  }, [])
+  })
   return (
-    <div>
-      hi from dashboard
+    <div className='dashboard-container'>
+      hi {users.username}
     </div>
   )
 }

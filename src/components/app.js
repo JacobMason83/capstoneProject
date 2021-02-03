@@ -85,7 +85,7 @@ export default class App extends Component {
           <Route path='/messages' render={props => (
             <Messaging 
               {...props}
-              username={this.state.username} id={this.state.id}
+              username={this.state.username} 
             />)} />
           <Route path='/send-messages' component={SendMessages} />
         </Switch>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 
-//TODO FIX ISSUE WITH REQUEST IN HTTP BAR
+
 
 
 export default class  Request extends Component {
@@ -29,22 +29,24 @@ export default class  Request extends Component {
             address, 
             description
         }, {withCredentials: true})
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-           
-        }
-            )
+        .then(res => {
+            this.setState({
+                renter: '',
+                address: '',
+                description: ''
+            })
+        })      
+            
         .catch(err => console.error(err))
         
     }
-    componentDidMount() {
-        this.setState({
-            renter: '',
-            address: '',
-            description: ''
-        })
-    }
+    // componentDidMount() {
+    //     this.setState({
+    //         renter: '',
+    //         address: '',
+    //         description: ''
+    //     })
+    // }
     render() {
         return(
             
