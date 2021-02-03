@@ -1,5 +1,5 @@
 .add-homes-form {
-    position: fixed;
+    position: absolute;
     top: 150px;
     left: 500px;
     width: 60vw;
@@ -8,7 +8,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 60vh;
+        height: 100%;
         @include bg-guide();
         .input-wrapper {
            margin-bottom: 15px;
@@ -28,4 +28,36 @@
         }
     
   }
+}
+@media(max-width: 768px){
+    .add-homes-form {
+        position: absolute;
+        top: 150px;
+        left: 150px;
+        width: 500px;
+        .landlord-form {
+            width: 50%;
+            h1 {
+                font-size: 15px;
+            }
+            .input-wrapper {
+               margin: 0;
+               font-size: 15px;
+              
+               display: flex;
+               justify-content: center;
+               flex-direction: column;
+               input {
+                border-radius:10px;  
+                height: 30px; 
+                border:2px solid black;  
+                width:60%;
+               }
+            }
+            .btn {
+                margin-top: 20px;
+            }
+        
+      }
+    }
 }

@@ -9,3 +9,8 @@ body {
     background-image: url('./images/body-bg.jpg') ;
     font-family: 'Fira Sans Serif', 'sans serif';
 }
+@media(max-width: 768px) {
+    body {
+        overflow: scroll;
+    }
+}

@@ -1,13 +1,14 @@
 .nav-container {
   display: grid;
   grid-template-columns: 1fr;
+  top:0px;
   width: 300px;
   height: 100%;
   color: white;
-  position: relative;
+  position: absolute;
   .nav-links-wrapper {
     @include bg-guide();
-    position:fixed;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -27,14 +28,13 @@
 }
 @media (max-width: 768px){
   .nav-container {
-    position: none;
+    position: absolute;
     width: 310px;
     height: 100vh;
     .nav-links-wrapper {
-      position: none;
+      position: fixed;
       align-items: flex-start;
-      width: 25%;
-      
+      width: 25%;      
       .nav-header{
         font-size: 15px;
       }
