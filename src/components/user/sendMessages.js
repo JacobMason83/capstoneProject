@@ -6,17 +6,20 @@ import axios from 'axios'
 const SendMessages = props => {
     const[username, setUserName ] = useState('')
     const[msg, setMsg ] = useState('')
+    const [from , setFrom] = useState('')
     const handleSubmit = (e) => {
         e.preventDefault()
         axios
         .post('http://localhost:4000/message', {
             username, 
-            msg
+            msg,
+            from
         }, {withCredentials:true} )
         .then(res => {
             setUserName('')
             setMsg('')
-            return res.data
+            setFrom('')
+            
         })
         .catch(err => console.log(err))
     }
@@ -32,8 +35,16 @@ const SendMessages = props => {
                   type='text'
                   name='username'
                   onChange={(e) => setUserName(e.target.value)}
-                  placeholder='User Name'
+                  placeholder='To'
                   value={username}
+                />
+                <label htmlFor='userName'>UserName</label>
+                <input
+                  type='text'
+                  name='from'
+                  onChange={(e) => setFrom(e.target.value)}
+                  placeholder='From'
+                  value={from}
                 />
                 
                 <label htmlFor='message'>Message</label>
@@ -49,7 +60,7 @@ const SendMessages = props => {
                 </div>
                 
                
-                <button className='btn' type='submit'>Send</button>
+                <button className='message-btn' type='submit'>Send</button>
                 </div>
             
         </form>

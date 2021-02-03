@@ -25,9 +25,10 @@
             textarea {
                 width: 100%
             }
-            .btn {
-                @include btn-guide();
-            }
+        }
+        .message-btn {
+            @include btn-guide();
+            width: 20%;
         }
     }
 }

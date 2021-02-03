@@ -33,7 +33,8 @@ export default class App extends Component {
       username: '',
       role: '',
       loggedInStatus: 'NOT_LOGGED_IN',
-      modalIsOpen: true
+      modalIsOpen: true,
+      id: ""
     }
   }
   handleSuccessfulLogin = data => {
@@ -41,7 +42,8 @@ export default class App extends Component {
     this.setState({
       username: data.username,
       role: data.role,
-      loggedInStatus: 'LOGGED_IN'
+      loggedInStatus: 'LOGGED_IN',
+      id: data.id
     })
   }
 
@@ -80,7 +82,11 @@ export default class App extends Component {
           <Route path='/home-showpage' component={HomeShowPage} />
           <Route path='/showRequests' component={RequestShowPage} />
           <Route path='/pay-rent' component={PayRent} />
-          <Route path='/messages' component={Messaging} />
+          <Route path='/messages' render={props => (
+            <Messaging 
+              {...props}
+              username={this.state.username} id={this.state.id}
+            />)} />
           <Route path='/send-messages' component={SendMessages} />
         </Switch>
       </Router>

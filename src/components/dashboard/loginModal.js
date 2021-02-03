@@ -51,7 +51,7 @@ export default class LoginModal extends Component {
         this.props.handleSuccessfulLogin({
           username: results.data.username,
           role: results.data.role,
-          _id: results.data._id  
+          id: results.data._id  
         })
         
       })
@@ -67,8 +67,15 @@ export default class LoginModal extends Component {
       }, 
       {withCredentials: true})      
       .then(res => {
-        this.props.handleSuccessfulLogin(res.data)
-      } )
+        return res.data
+      }).then(results => {
+        this.props.handleSuccessfulLogin({
+          username: results.data.username,
+          role: results.data.role,
+          id: results.data._id  
+        })
+        
+      })
       .catch(err => console.error(err))
   }
   handleSubmit = e => {
