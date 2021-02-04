@@ -45,7 +45,8 @@ export default class App extends Component {
       username: data.username,
       role: data.role,
       loggedInStatus: 'LOGGED_IN',
-      id: data.id
+      id: data.id,
+      token: data.token
     })
   }
   
