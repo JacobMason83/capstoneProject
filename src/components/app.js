@@ -52,8 +52,8 @@ export default class App extends Component {
   componentWillMount(){
     const {id, role, username, token } = this.state
     axios
-    .post('https://jdm-express-jwt-api.herokuapp.com/check-login', {
-      id
+    .post(`https://jdm-express-jwt-api.herokuapp.com/check-login`, {
+      token
     }, {withCredentials: true})
     .then(res => {
       console.log('i did it i made it stay')
