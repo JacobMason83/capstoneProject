@@ -10,7 +10,7 @@ const SendMessages = props => {
     const handleSubmit = (e) => {
         e.preventDefault()
         axios
-        .post('http://localhost:4000/message', {
+        .post('https://jdm-express-jwt-api.herokuapp.com/message', {
             username, 
             msg,
             from

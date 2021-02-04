@@ -24,7 +24,7 @@ export default class  Request extends Component {
     formSubmit = () => {
         const { renter, address, description } = this.state
         axios
-        .post('http://localhost:4000/requests', {
+        .post('https://jdm-express-jwt-api.herokuapp.com/requests', {
             renter, 
             address, 
             description

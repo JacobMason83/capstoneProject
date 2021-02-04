@@ -42,7 +42,7 @@ export default class LoginModal extends Component {
   handleLogIn = () => {
       const {username, password} = this.state
     axios
-      .post('http://localhost:4000/login', {
+      .post('https://jdm-express-jwt-api.herokuapp.com/login', {
           username: username,
           password: password
       }, {withCredentials: true})
@@ -61,7 +61,7 @@ export default class LoginModal extends Component {
   handleRegister = () => {
       const { username, password, role} = this.state
     axios
-      .post('http://localhost:4000/register', {
+      .post('https://jdm-express-jwt-api.herokuapp.com/register', {
           username: username,
           password: password,
           role: role

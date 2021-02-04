@@ -14,7 +14,7 @@ export default class RequestShowPage extends Component {
    }
    getRequestItem = () => {
        axios
-       .get('http://localhost:4000/all-requests', {withCredentials: true})
+       .get('https://jdm-express-jwt-api.herokuapp.com/all-requests', {withCredentials: true})
        .then(res => 
             this.setState({
            needToBeFixed: res.data

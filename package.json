@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-router",
+  "name": "landlordTenantApp",
   "version": "1.0.0",
   "description": "Basic skeleton codebase for React/Redux/Router applications.",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:bottega-code-school/js-builder.git"
+    "url": "git@github.com:JacobMason83/capstoneProject"
   },
   "keywords": [
     "es6",

@@ -26,7 +26,7 @@ export default class AddHomes extends Component {
   handleSubmit = () => {
       const {propertyName, address,value,renter,image} = this.state
     axios
-      .post('http://localhost:4000/homes',{
+      .post('https://jdm-express-jwt-api.herokuapp.com/homes',{
           propertyName,
           address,
           value,

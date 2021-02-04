@@ -1,19 +1,18 @@
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-
+import axios from 'axios'
 import '../style/main.scss'
 
 import NavBar from './Navigation/navBar'
-import DashBoard from './dashboard/dashBoard'
+import DashBoard from './pages/dashBoard'
 import Request from './pages/requests'
-import LoginModal from './dashboard/loginModal'
+import LoginModal from './login/loginModal'
 import AddHomes from './pages/add-homes'
 import HomeShowPage from './pages/home-show-page'
 import RequestShowPage from './pages/showRequests'
 import PayRent from './pages/payRent'
 import Messaging from './pages/messaging'
 import SendMessages from './landlord/sendMessages'
-import axios from 'axios'
 
 // TODO
 // add routes for messaging, maitanence requestsxxx
@@ -52,7 +51,7 @@ export default class App extends Component {
   componentWillMount(){
     const {id, role, username, } = this.state
     axios
-    .post('http://localhost:4000/check-login', {
+    .post('https://jdm-express-jwt-api.herokuapp.com/check-login', {
       id
     }, {withCredentials: true})
     .then(res => {
@@ -60,8 +59,8 @@ export default class App extends Component {
       if(res.data.message === 'logged-in') {
         this.setState({
           loggedInStatus: 'LOGGED-IN',
-          role: this.state.role,
-          username: this.state.username
+          role: role,
+          username: username
         })
       } else {
         this.setState({
