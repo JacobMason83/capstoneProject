@@ -15,7 +15,7 @@ export default class HomeShowPage extends Component  {
     
      componentDidMount() {
          axios
-         .get('http://localhost:4000/allHomes', { withCredentials: true })  
+         .get('https://jdm-express-jwt-api.herokuapp.com/allHomes', { withCredentials: true })  
          .then(res => this.setState({
              homes: res.data
          }))

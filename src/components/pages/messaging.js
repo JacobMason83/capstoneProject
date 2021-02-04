@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react"
 import axios from 'axios'
 //Todo get userinfo from state and use it to pass the id to the user message component
 const Messaging = (props) => {
-    const [username, setUsername ] = useState('')
-    
+    const [username, setUsername ] = useState('')   
     
     const [data, setData ] = useState([])
   
