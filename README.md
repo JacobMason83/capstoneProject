@@ -1,5 +1,6 @@
-# React/Redux/Router Starter Project
-
-> Provided for the students of the [Bottega Code School](https://bottega.tech/)
+Hello,
+THIS IS MY LANDLORD TENANT CAPSTONE,  USING REACTJS FOR THE FRONT ALONG 
+WIT SCSS STYLING. TGE BACKEND API IS DONE WITH EXPRESS JWT, COOKIE PARSER, 
+MOGOOSE, AND A MONGO DB. ANY QUESTIONS JUST ASK
 
 *Fork from [es6-webpack2-starter](https://github.com/micooz/es6-webpack2-starter)*
