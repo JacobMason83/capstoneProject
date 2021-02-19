@@ -13,6 +13,7 @@ import RequestShowPage from './pages/showRequests'
 import PayRent from './pages/payRent'
 import Messaging from './pages/messaging'
 import SendMessages from './landlord/sendMessages'
+import LoginPage from './pages/login-page'
 
 // TODO
 // add routes for messaging, maitanence requestsxxx
@@ -90,6 +91,7 @@ export default class App extends Component {
           
         
         <Switch>
+        <Route path='/login-page' component={LoginPage} />
           <Route
             exact
             path='/'

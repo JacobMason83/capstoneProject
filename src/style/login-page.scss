@@ -1,0 +1,121 @@
+@import "./keyframes.scss";
+.login-container {
+  width: 100vw;
+  .header-wrapper {
+    h1 {
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: white;
+      font-weight: 900;
+      font-size: 5em;
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      text-align: center;
+      span {
+        opacity: 0;
+        display: inline-block;
+        animation: animate 1s linear forwards;
+        -webkit-animation: animate 1s linear forwards;
+        &:nth-child(1) {
+          animation-delay: 1s;
+        }
+        span:nth-child(2) {
+          animation-delay: 1.5s;
+        }
+        span:nth-child(3) {
+          animation-delay: 2s;
+        }
+        span:nth-child(4) {
+          animation-delay: 2.5s;
+        }
+        span:nth-child(5) {
+          animation-delay: 3s;
+        }
+        span:nth-child(6) {
+          animation-delay: 3.25s;
+        }
+        span:nth-child(7) {
+          animation-delay: 3.5s;
+        }
+        span:nth-child(8) {
+          animation-delay: 4s;
+        }
+        span:nth-child(9) {
+          animation-delay: 4.5s;
+        }
+      }
+    }
+  }
+  .login-wrapper {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    @include glass-bg-guide();
+    .title-wrapper {
+      text-align: center;
+      margin-bottom: 50px;
+      img {
+        width: 50%;
+        border-radius: 50%;
+        border: 4px solid rgb(23, 12, 138);
+      }
+    }
+    .login-content {
+      .input-wrapper {
+        text-align: center;
+        input {
+          transition: all 0.2s;
+          touch-action: manipulation;
+          font-size: 1.5em;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          font-family: inherit;
+          -webkit-appearance: none;
+          border-radius: 0;
+          padding: 0;
+          cursor: text;
+          input:focus {
+            outline: 0;
+            border-bottom: 1px solid white;
+            &::-webkit-input-placeholder {
+              opacity: 1;
+            }
+          }
+        }
+        input:placeholder-shown + label {
+          cursor: text;
+          max-width: 66.66%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          transform-origin: left bottom;
+          transform: translate(0, 2.125rem) scale(1.5);
+        }
+        input:not(:placeholder-shown) + label,
+        input:focus + label {
+          transform: translate(0, 0) scale(1);
+          cursor: pointer;
+        }
+        label {
+          transition: all 0.2s;
+          touch-action: manipulation;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+      }
+      .login-btns {
+        text-align: center;
+        .login-btn {
+            @include btn-guide();
+            width: 33%;
+            margin-top: 15px;
+        }
+      }
+    }
+  }
+}

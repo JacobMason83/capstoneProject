@@ -1,8 +1,8 @@
-import React, {useEffect, useState, Fragment} from 'react'
+import React, {useEffect, useState} from 'react'
 
 
 // TODO
-// add login functionality for user or admin so that it will add admin buttons to the page
+// add to show properties, and any messages that came in 
 
 const DashBoard = props => {
   const [username, setUsername] = useState('')
@@ -13,10 +13,26 @@ const DashBoard = props => {
 
   return (
     <div className='dashboard-container'>
-      <h1>
-      hi {username}
-      <p> Thanks for Joining our Community and appreciate the continued support</p>
-      </h1>
+    <div className="personal-header">
+      <div className="property-count">
+      {username}
+        <h4>You have insert property count here  properties registered!</h4>
+      </div>
+      </div>
+      <div className="property-name">
+        <h3>Here are all of your properties:</h3>
+      </div>
+    
+      <div className="property-content">
+        <div className="card">
+          <div className="card-wrapper">
+            <h3>Here are the renters who have paid this month: </h3>
+          </div>
+        </div>
+      </div>
+      <div className="message-content">
+      <h3>hi im a message please read me </h3>
+      </div>
     </div>
   )
 }

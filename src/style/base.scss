@@ -4,12 +4,22 @@ body {
     object-fit: cover;
     overflow: scroll;   
     font-weight: 900;
-    position: absolute;
+    
     color: white;   
-    background-image: url('./images/body-bg.jpg') ;
+    background-image: url('./images/blue-bg.jpg') ;
     font-family: 'Fira Sans', 'sans serif';
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    .app-wrapper {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        width: 100vw;
+        height: 100vh;
+    }
     
 }
 @media(max-width: 768px) {

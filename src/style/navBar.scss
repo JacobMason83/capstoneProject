@@ -26,9 +26,7 @@
   }  
 }
 @media (max-width: 768px){
-  .nav-container {
-    position: absolute;
-    width: 310px;
+  .nav-container {    
     height: 100vh;
     .nav-links-wrapper {
       align-items: flex-start;

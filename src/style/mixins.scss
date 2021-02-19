@@ -23,3 +23,14 @@ $bg-hover: #71b2e7;
     background: rgb(31,31,52);
         background: radial-gradient(circle, rgba(31,31,52,1) 0%, rgba(32,37,46,0.91290283203125) 35%, rgba(23,12,138,1) 100%);
 }
+
+@mixin glass-bg-guide {
+    height: 500px;
+    width: 500px;
+    background: rgba( 23, 12, 138, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.0px );
+    -webkit-backdrop-filter: blur( 4.0px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
