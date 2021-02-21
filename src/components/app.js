@@ -34,10 +34,8 @@ export default class App extends Component {
       username: '',
       role: '',
       loggedInStatus: 'NOT_LOGGED_IN',
-      modalIsOpen: true,
-      id: "",
+      id: '',
       token: ''
-      
     }
   }
   handleSuccessfulLogin = data => {
@@ -50,56 +48,49 @@ export default class App extends Component {
       token: data.token
     })
   }
-  
-  componentWillMount(){
-    const {id, role, username, token } = this.state
+
+  componentDidMount () {
+    const { id, role, username, token } = this.state
     axios
-    .post(`https://jdm-express-jwt-api.herokuapp.com/check-login`, {
-      token,
-      id
-    }, {withCredentials: true})
-    .then(res => {
-      console.log('i did it i made it stay')
-      if(res.data.message === 'logged-in') {
-        this.setState({
-          loggedInStatus: 'LOGGED-IN',
-          role: role,
-          username: username,
-          token: res.data.token
-        })
-      } else {
-        this.setState({
-          loggedInStatus: 'NOT-LOGGED-IN'
-        })
-        this.props.history.push('/')
-      }
-      
-    }) 
+      .post(
+        `https://jdm-express-jwt-api.herokuapp.com/check-login`,
+        {
+          token,
+          id
+        },
+        { withCredentials: true }
+      )
+      .then(res => {
+        console.log('i did it i made it stay')
+        if (res.data.message === 'logged-in') {
+          this.setState({
+            loggedInStatus: 'LOGGED-IN',
+            role: role,
+            username: username,
+            token: res.data.token
+          })
+        } else {
+          this.setState({
+            loggedInStatus: 'NOT-LOGGED-IN'
+          })
+          this.props.history.push('/')
+        }
+      })
   }
 
   render () {
     return (
       <Router>
-       
-          
-            <NavBar            
-            userName={this.state.username}
-            roles={this.state.role}        
-            />
+        <NavBar userName={this.state.username} roles={this.state.role} />
 
-         
-          
-        
         <Switch>
-        <Route path='/login-page' component={LoginPage} />
+        
           <Route
-            exact
-            path='/'
+            exact path='/'
             render={props => (
-              <LoginModal
+              <LoginPage
                 {...props}
                 handleSuccessfulLogin={this.handleSuccessfulLogin}
-                modalIsOpen={this.state.modalIsOpen}
               />
             )}
           />
@@ -118,11 +109,12 @@ export default class App extends Component {
           <Route path='/home-showpage' component={HomeShowPage} />
           <Route path='/showRequests' component={RequestShowPage} />
           <Route path='/pay-rent' component={PayRent} />
-          <Route path='/messages' render={props => (
-            <Messaging 
-              {...props}
-              username={this.state.username} 
-            />)} />
+          <Route
+            path='/messages'
+            render={props => (
+              <Messaging {...props} username={this.state.username} />
+            )}
+          />
           <Route path='/send-messages' component={SendMessages} />
         </Switch>
       </Router>

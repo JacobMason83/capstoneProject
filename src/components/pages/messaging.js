@@ -9,7 +9,7 @@ const Messaging = (props) => {
     useEffect(() => {
         setUsername(props.username)
         axios
-        .get(`https://jdm-express-jwt-api.herokuapp.com/${username}`, {withCredentials: true})
+        .get(`https://jdm-express-jwt-api.herokuapp.com/messages/${username}`, {withCredentials: true})
         .then(res => {
             setData(res.data)
             
