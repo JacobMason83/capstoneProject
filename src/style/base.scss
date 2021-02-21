@@ -3,20 +3,20 @@ body {
     margin: 0;
     object-fit: cover;
     overflow: scroll;   
-    font-weight: 900;
-    
+    font-weight: 900;    
     color: white;   
     background-image: url('./images/blue-bg.jpg') ;
     font-family: 'Fira Sans', 'sans serif';
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    
+    
     .app-wrapper {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(12, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
         width: 100vw;
         height: 100vh;
     }

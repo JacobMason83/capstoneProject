@@ -8,30 +8,40 @@ const PropertyItem = (props) => {
 
 {propertyItems.map(item => {
     return (
-        <div key={item.id} className='property-wrapper'>
+        
+        <div className='property-wrapper'>
             
             <div className="image-wrapper">
                 <img src={item.image} alt="logo"/>
-                <hr />
             </div>
             <div className="content">
-                <h1>Property Name:{item.propertyName}</h1>
-                <hr />
-                <h2>Address:{item.address}</h2>
-                <hr />
-                <h2>Value:{item.value}</h2>                
-                </div>                              
-                <div className="content">
-                <h1>Renter:{item.renter}</h1>
+            <div className="title">
+                <h1>Property: </h1> <b>{item.propertyName}</b>
+            </div>
+            <br />
+                <div className="address">
+                <h2>Address:</h2> {item.address}
+                </div>
+                <br />
+                <div className="price">
+                <h2>Value:</h2>  {item.value}              
+                </div>
+                <br />
+                <div className="renter">
+                <h1>Renter:</h1> {item.renter}
                 </div>
 
+                </div>                              
             </div>               
+
+
             
         
     )
 })}
-
         </div>
+
+        
     )
 }
 export default PropertyItem

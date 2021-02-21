@@ -26,11 +26,10 @@ export default class HomeShowPage extends Component  {
      render() {
          return (
              
-             <div className="show-page-properties">                
-                 <PropertyItem homes={this.state.homes} />
+             <PropertyItem homes={this.state.homes} />
      
                        
-             </div>
+             
          )
 
      }

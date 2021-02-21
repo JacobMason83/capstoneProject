@@ -34,3 +34,12 @@ $bg-hover: #71b2e7;
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+@mixin card-content {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    
+    @content;
+}
