@@ -8,7 +8,6 @@ const PropertyItem = (props) => {
 
 {propertyItems.map(item => {
     return (
-        
         <div className='property-wrapper'>
             
             <div className="image-wrapper">
@@ -16,19 +15,16 @@ const PropertyItem = (props) => {
             </div>
             <div className="content">
             <div className="title">
-                <h1>Property: </h1> <b>{item.propertyName}</b>
+                <h1>Property Name:{item.propertyName}</h1>
             </div>
-            <br />
                 <div className="address">
-                <h2>Address:</h2> {item.address}
+                <h2>Address:{item.address}</h2>
                 </div>
-                <br />
                 <div className="price">
-                <h2>Value:</h2>  {item.value}              
+                <h2>Value:{item.value}</h2>                
                 </div>
-                <br />
                 <div className="renter">
-                <h1>Renter:</h1> {item.renter}
+                <h1>Renter:{item.renter}</h1>
                 </div>
 
                 </div>                              
@@ -40,6 +36,7 @@ const PropertyItem = (props) => {
     )
 })}
         </div>
+
 
         
     )
