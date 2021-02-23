@@ -16,6 +16,9 @@
     
     .nav-header {
       font-size: 25px;
+      width: 50%;
+      -webkit-clip-path: polygon(78% 3%, 79% 78%, 17% 77%, 15% 4%);
+      clip-path: polygon(78% 3%, 79% 78%, 17% 77%, 15% 4%);
     }
     .nav-links {
       text-decoration: none;

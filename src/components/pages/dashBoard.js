@@ -1,4 +1,5 @@
-import React, {useEffect, useState} from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
+import Header from '../helpers/headerPage'
 
 
 // TODO
@@ -6,12 +7,15 @@ import React, {useEffect, useState} from 'react'
 
 const DashBoard = props => {
   const [username, setUsername] = useState('')
+  const page = 'dashboard'
 
   useEffect(()=> {
     setUsername(props.username)
     }, [props.username] )
 
   return (
+    <Fragment>
+    <Header page={page} />
     <div className='dashboard-container'>
     <div className="personal-header">
       <div className="property-count">
@@ -34,6 +38,7 @@ const DashBoard = props => {
       <h3>hi im a message please read me </h3>
       </div>
     </div>
+    </Fragment>
   )
 }
 export default DashBoard

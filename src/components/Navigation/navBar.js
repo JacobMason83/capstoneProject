@@ -1,5 +1,6 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import { Link } from 'react-router-dom'
+import logoImg from '../../style/images/acton.png'
 
 //Todo get the user data
 
@@ -15,7 +16,7 @@ const NavBar = props => {
   return (
     <div className='nav-container'>
       <div className='nav-links-wrapper'>
-        <h1 className='nav-header'>Landlord Tenant App </h1>
+        <img className='nav-header' src={logoImg} alt=""/> 
         <h3>{username}</h3>
         <Link to='/dashboard' className='nav-links'>
           Home

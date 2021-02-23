@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
-const Header = () => {
-
+const Header = (props) => {
+   const [page, setPage ] = useState('')
+   useEffect(() => {
+      setPage(props.page)
+   }, [props.page])
    return(
       <div className="top-header">   
       <div className="left-side">
-       <h1> Messages Page </h1>
+       <h1> {page.toUpperCase()} </h1>
       </div>
       <div className="right-side">
          <ul>
