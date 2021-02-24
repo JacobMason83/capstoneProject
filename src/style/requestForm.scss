@@ -3,39 +3,88 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 500px;    
-    position: fixed;
-    top: 100px;
-    left: 100px;
-    
-
-    
-    .form {
+   position: absolute;
+    top: 200px;
+    left: 150px;
+    .form-maitenance {
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         border: 3px solid black;
-        height: 100%;
+        height: 600px;
         width: 50%;
         @include bg-guide();
         h1 {
             text-align: center;
         }
+        .form-wrapper{
+            background-image: url('./images/landlord-tenant.jpg');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex-basis: 100%;
+            width: 90%;
+            border: 2px solid white;
+            margin-bottom: 15px;
+            
+            .float-container {
+                border: solid 1px #ccc;
+                position: relative;
+                padding: 0px 0px;
+                margin-bottom: 0px;
+                margin-bottom: 15px;              
+                &:focus,
+                &:focus-within,
+                 &:active,
+                 &:focus-visible{
+                    transform: translate(0, 4px) scale(1);
+                    color:black; 
+                }
+                
+                label {
+                    font-size: 16px;
+                    position: absolute;
+                    width: fit-content;
+                    transform: translateY(0px, 16px) scale(1);
+                   
+                    
+                    
+                    }
+                    input {
+                        @include input-guide();
+                        padding: 16px 0px 10px;
+                        border:none;
+                        outline: 0;
+                        width: 400px;
+                        height: 30px;
+                        border-radius: 0;
+                        
+                    }
+                    textarea {
+                        @include input-guide();
+                        border:0;
+                        padding: 16px 0px 10px;
+                        outline: 0;
+                        width: 400px;
+                        height: 150px;
+                        border-radius: 0;
+                        margin-bottom: -5px;
+                        
         
-        input {
-            @include input-guide();
-            width: 50%;
-            height: 50px;
+                    }
+                }
+                
+            }
+            .btn {
+                @include btn-guide();
+                width: 100px;
+            }
         }
-        textarea {
-            @include input-guide();
-            width: 50%;
-        }
-        .btn {
-            @include btn-guide();
-            width: 100px;
-        }
+
+        
     }
-}

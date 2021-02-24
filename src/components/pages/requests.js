@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import axios from 'axios'
+import Header from '../helpers/headerPage'  
+import { FormControl, TextField } from '@material-ui/core'
 
 
 
@@ -11,7 +13,8 @@ export default class  Request extends Component {
         this.state = {
             renter: "",
             address: "", 
-            description: ""
+            description: "",
+            page: 'Maitenance Requests'
         }
     }
    handleChange = (e) => {
@@ -45,22 +48,35 @@ export default class  Request extends Component {
     }
     render() {
         return(
-            
+            <Fragment>
+            <Header page={this.state.page} />
             <div className="request-form" >
-            <form className="form" onSubmit={this.formSubmit}>
+            <form className="form-maitenance" onSubmit={this.formSubmit}>
             <h1>Put your Maitenance Requests Here: </h1>
+            <div className="form-wrapper">
+      
+            <div className="float-container">
+
+            <label htmlFor="name">Name</label>
                 <input type="text"
                     name="renter"
                     placeholder="Name"
                     value={this.state.renter}
                     onChange={this.handleChange}
                 />
+
+            </div>
+            <div className="float-container">
+            <label htmlFor="address">Address</label>
                 <input type="text"
                     name="address"
                     placeholder="Address"
                     value={this.state.address}
                     onChange={this.handleChange}
                 />               
+            </div>
+            <div className="float-container">
+            <label htmlFor="description">Description</label>
                 <textarea 
                 rows='5'
                 col="5"
@@ -70,12 +86,17 @@ export default class  Request extends Component {
                 onChange={this.handleChange}
                 >
                 </textarea>
-                    
+
+            </div>            
                 
                 <button type="submit" className="btn">Submit</button>
 
+            </div>
+
             </form>
             </div>
+
+            </Fragment>
             
         )
 

@@ -17,7 +17,7 @@ $bg-hover: #71b2e7;
 @mixin input-guide {
     border-radius:10px;  
     height: 30px; 
-    border:2px solid black  
+    border:2px solid black;  
 }
 @mixin bg-guide {
     background: rgb(31,31,52);
