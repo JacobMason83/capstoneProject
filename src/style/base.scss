@@ -5,7 +5,8 @@ body {
     overflow: scroll;   
     font-weight: 900;    
     color: white;   
-    background-image: url('./images/blue-bg.jpg') ;
+    // background-image: url('./images/blue-bg.jpg') ;
+    background-color: #1D2228;
     font-family: 'Fira Sans', 'sans serif';
     display: grid;
     
@@ -19,6 +20,9 @@ body {
         grid-template-rows: repeat(auto-fill, minmax(400px, 1fr));
         width: 100vw;
         height: 100vh;
+        background:#5f5c5b;
+        
+      
     }
     
 }

@@ -1,108 +1,80 @@
-// import React, { useState } from 'react'
-// import { NavLink } from 'react-router-dom'
-// import {
-//     ProSidebar,
-//     Menu,
-//     MenuItem,
-//     SidebarHeader,
-//     SidebarFooter,
-//     SidebarContent,
-//   } from "react-pro-sidebar";
-//   import { FaList, FaRegHeart } from "react-icons/fa";
-// import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
-// import { FaMoneyCheck } from "react-icons/fa";
-// import {  BiMessageAltDetail } from "react-icons/bi";
-// import { ImUserPlus } from "react-icons/im";
-// import { RiHomeHeartLine } from "react-icons/ri";
-//   // bringing in styles from the library 
-// // TODO 
-// // bring in props to add custom username to the sidebar 
+import React, {useState, Fragment} from 'react';
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import Button from '@material-ui/core/Button';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
 
-//   const SideBar = (props) => {
-//           //create initial menuCollapse state using useState hook
-//     const [menuCollapse, setMenuCollapse] = useState(false)
-//     const [name, setName] = useState('') 
-    
+const useStyles = makeStyles({
+  list: {
+    width: 250,
+  },
+  fullList: {
+    width: 'auto',
+  },
+});
 
-//     //create a custom function that will change menucollapse state from false to true and true to false
-//   const menuIconClick = () => {
-//     //condition checking to change state from true to false and vice versa
-//     menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
-//   };
+const TemporaryDrawer = () => {
+  const classes = useStyles();
+  const [state, setState] = useState({
+    left: false,
+   
+  });
 
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
 
-//   return (
-    
-//       <div id="header">
-//           {/* collapsed props to change menu size using menucollapse state */}
-//         <ProSidebar collapsed={menuCollapse}>
-//           <SidebarHeader>
-//           <div>
-//             {name}
-//           </div>
-//             <div className="closemenu" onClick={menuIconClick}>
-//                 {/* changing menu collapse icon on click */}
-//               {menuCollapse ? (
-//                 <FiArrowRightCircle/>
-//               ) : (
-//                 <FiArrowLeftCircle/>
-//               )}
-//             </div>
-//           </SidebarHeader>
-//           <SidebarContent>
-//             <Menu iconShape="square">
-//               <MenuItem active={true} icon={<FiHome />}>
-//               <NavLink to='/home' activeClassName='active' className='nav-link'>
-//               Home
-//             </NavLink>
-//               </MenuItem>
-//               <MenuItem icon={<BiMessageAltDetail />}><NavLink
-//               to='/message'
-//               activeClassName='active'
-//               className='nav-link'
-//             > Messaging
-//             </NavLink></MenuItem>
-//               <MenuItem icon={<ImUserPlus />}><NavLink
-//               to='/requests'
-//               activeClassName='active'
-//               className='nav-link'
-//             > Maitenance Requests
-//             </NavLink></MenuItem>
-//               <MenuItem icon={<FaMoneyCheck />}><NavLink
-//               to='/pay-rent'
-//               activeClassName='active'
-//               className='nav-link'
-//             > Pay Rent 
-//             </NavLink></MenuItem>
-//               <MenuItem icon={<RiHomeHeartLine />}><NavLink
-//               to='/dashboard'
-//               activeClassName='active'
-//               className='nav-link'
-//             > DashBoard
-//             </NavLink></MenuItem>
-         
-//             </Menu>
-//           </SidebarContent>
-//           <SidebarFooter>
-//             <Menu iconShape="square">
-//               <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+    setState({ ...state, [anchor]: open });
+  };
 
-//             </Menu>
-//           </SidebarFooter>
-//         </ProSidebar>
-//       </div>
-    
-//   );
-// };
+  const list = (anchor) => (
+    <div
+      className={clsx(classes.list, {
+        [classes.fullList]: anchor === 'top' || anchor === 'bottom',
+      })}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        {['Inbox', 'Pay Rent', 'Maintenance Requests', 'Send Messages'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        {['Messages', 'Requests', 'Portfolio'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+    </div>
+  );
 
-// export default SideBar;
-// was a sidebar i was going to use 
-
-
-
-
-  
-    
-  
-  
-
+  return (
+    <div>
+      {['left'].map((anchor) => (
+        <Fragment key={anchor}>
+          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+          <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+            {list(anchor)}
+          </Drawer>
+        </Fragment>
+      ))}
+    </div>
+  );
+}
+export default TemporaryDrawer

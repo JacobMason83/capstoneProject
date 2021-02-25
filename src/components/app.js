@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import axios from 'axios'
 import '../style/main.scss'
 
-import NavBar from './Navigation/navBar'
+// import NavBar from './Navigation/navBar'
+import ButtonAppBar from './Navigation/nav'
 import DashBoard from './pages/dashBoard'
 import Request from './pages/requests'
 import LoginModal from './login/loginModal'
@@ -81,7 +82,7 @@ export default class App extends Component {
   render () {
     return (
       <Router>
-        <NavBar userName={this.state.username} roles={this.state.role} />
+        <ButtonAppBar userName={this.state.username} roles={this.state.role} />
 
         <Switch>
         

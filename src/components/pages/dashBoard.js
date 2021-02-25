@@ -1,5 +1,5 @@
 import React, {Fragment, useEffect, useState} from 'react'
-import Header from '../helpers/headerPage'
+
 
 
 // TODO
@@ -15,7 +15,7 @@ const DashBoard = props => {
 
   return (
     <Fragment>
-    <Header page={page} />
+    
     <div className='dashboard-container'>
     <div className="personal-header">
       <div className="property-count">

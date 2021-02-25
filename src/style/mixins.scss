@@ -1,9 +1,12 @@
-$button-bg-color: #19508f;
+$button-bg-color: #fb8122;
 $bg-hover: #71b2e7;
+$font-color: #e1e2e2;
+$bg-color: #1D2228;
 
 @mixin btn-guide {
     background-color:$button-bg-color;
-    color:white;
+    color:$font-color;
+    font-weight: 900;
     width: 50%;
     height: 45px;
     border-radius: 100px;
@@ -20,8 +23,9 @@ $bg-hover: #71b2e7;
     border:2px solid black;  
 }
 @mixin bg-guide {
-    background: rgb(31,31,52);
-        background: radial-gradient(circle, rgba(31,31,52,1) 0%, rgba(32,37,46,0.91290283203125) 35%, rgba(23,12,138,1) 100%);
+    // background: rgb(31,31,52);
+    //     background: radial-gradient(circle, rgba(31,31,52,1) 0%, rgba(32,37,46,0.91290283203125) 35%, rgba(23,12,138,1) 100%);
+    background-color: $bg-color ;
 }
 
 @mixin glass-bg-guide {
