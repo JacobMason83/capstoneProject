@@ -36,7 +36,6 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.3",
     "ajv": "6.12.0",
-    "autoprefixer": "^9.1.0",
     "axios": "^0.19.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -81,11 +80,14 @@
     "webpack-merge": "4.2.2"
   },
   "devDependencies": {
+    "autoprefixer": "^10.2.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "postcss": "^8.2.6",
+    "tailwindcss": "^2.0.3",
     "uglifyjs-webpack-plugin": "^1.2.7"
   }
 }

@@ -6,7 +6,9 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import  TemporaryDrawer  from "../Navigation/side-bar";
+
+import { Link } from 'react-router-dom'
+import SideBarFullScreen from '../Navigation/side-bar'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -37,12 +39,13 @@ export default function ButtonAppBar(props) {
     }, [props.username])
   const classes = useStyles();
 
+
   return (
     <div className={classes.root} background={classes.root.background}>
       <AppBar position="static" className={classes.navBar} >
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={() => <TemporaryDrawer  />}>
-            <MenuIcon  />
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu"  onClick={() => <SideBarFullScreen open={{open: true}}/>} >
+            <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
            Landlord Tenant App
@@ -53,7 +56,7 @@ export default function ButtonAppBar(props) {
               </Fragment>
           ):(
               <Fragment>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit"><Link to='./'>Login</Link></Button>
 
               </Fragment>
           )}

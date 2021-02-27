@@ -2,8 +2,10 @@ import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import axios from 'axios'
 import '../style/main.scss'
+import "tailwindcss/tailwind.css"
 
-// import NavBar from './Navigation/navBar'
+import NavBar from './Navigation/navBar'
+
 import ButtonAppBar from './Navigation/nav'
 import DashBoard from './pages/dashBoard'
 import Request from './pages/requests'
@@ -36,7 +38,8 @@ export default class App extends Component {
       role: '',
       loggedInStatus: 'NOT_LOGGED_IN',
       id: '',
-      token: ''
+      token: '',
+      isOpen: false
     }
   }
   handleSuccessfulLogin = data => {
@@ -82,7 +85,7 @@ export default class App extends Component {
   render () {
     return (
       <Router>
-        <ButtonAppBar userName={this.state.username} roles={this.state.role} />
+        <NavBar username={this.state.username} role={this.state.role} />
 
         <Switch>
         

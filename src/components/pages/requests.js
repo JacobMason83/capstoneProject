@@ -49,7 +49,7 @@ export default class  Request extends Component {
     render() {
         return(
             <Fragment>
-            <Header page={this.state.page} />
+            
             <div className="request-form" >
             <form className="form-maitenance" onSubmit={this.formSubmit}>
             <h1>Put your Maitenance Requests Here: </h1>

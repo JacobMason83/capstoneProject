@@ -40,3 +40,14 @@
         -o-transform: scaleX(1) scaleY(1) scaleZ(0.9) rotateX(0deg) rotateY(0deg) rotateZ() translateX(0px) translateY(0px) translateZ(6px) skewX(1deg) skewY(0deg);
 }
 }
+@keyframes bg-anim {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

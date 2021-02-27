@@ -1,50 +1,48 @@
-.nav-container {
-  grid-column-start: 0;
-  grid-column-end: 2;
-  width: 300px;
-  height: 100vh;
-  color: white;
-  position: absolute;
-  border-radius: 15px;
-  .nav-links-wrapper{
-    @include bg-guide();    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    
-    .nav-header {
-      font-size: 25px;
-      width: 50%;
-      -webkit-clip-path: polygon(78% 3%, 79% 78%, 17% 77%, 15% 4%);
-      clip-path: polygon(78% 3%, 79% 78%, 17% 77%, 15% 4%);
-    }
-    .nav-links {
-      text-decoration: none;
-      color: white;
-      font-size:20px;
-      margin-bottom: 20px;
-    }
-  }  
-}
-@media (max-width: 768px){
-  .nav-container {    
-    height: 100vh;
-    .nav-links-wrapper {
-      align-items: flex-start;
-      justify-content: space-evenly;
-      height: 100vh;
-      font-size: 10px;
-      width: fit-content;     
-      .nav-header{
-        font-size: 12px;
-      }
-      font-size: 15px;
-      .nav-links {
-        font-size: 12px;
-        
-      }
-    }
-  }
-}
+// .nav-container{
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   font-size: 25px;
+//   width: 100vw;
+//   height: 190px;
+//   margin: 0;
+//   padding: 0;
+//   background-color: $bg-color;
+//   .nav-links-wrapper  {
+//     display:flex;
+//     justify-content:space-between;
+//     flex-direction: row;
+//     align-items: center;
+//     flex-grow: 1;
+//     .img-wrapper {
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+//       flex-direction: row;
+//       .nav-header {
+//         width: 30%;
+//         height: 140px;
+//         margin-bottom: 15px;
+//         margin-right: auto;
+//       }
+//       h3 {
+//         margin-right: auto;
+//       }
+//     }
+//     .links {
+//       margin-left: auto;
+//       margin-right: 5%;
+//       display: flex;
+//       font-size: 20px;
+//       .nav-links {
+//         margin-right:10px;
+//         color: #fb8122 ;
+//         text-decoration: none;
+//         &:hover {
+//           background-color: $button-bg-color;
+//           color: $bg-color;
+//         }
+//       }
+//     }
+//   }
+// }

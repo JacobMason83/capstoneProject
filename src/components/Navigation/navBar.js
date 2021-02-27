@@ -7,60 +7,47 @@ import logoImg from '../../style/images/acton.png'
 const NavBar = props => {
   const [role, setRole] = useState('owner')
   const [username, setUsername] = useState('')
-
+  
   useEffect(() => {
-    setRole(props.roles)
-    setUsername(props.userName)
-  }, [props.userName, props.roles])
-
+    setRole(props.role)
+    setUsername(props.username)
+  }, [props.username, props.role])
+  
   return (
-    <div className='nav-container'>
-      <div className='nav-links-wrapper'>
-        <img className='nav-header' src={logoImg} alt=""/> 
+    <nav className='bg-black h-32 '>
+    <div className='max-w-7xl mx-auto flex flex-row mx-4 justify-between items-center flex-grow'>
+      
+       <div className="mr-4 flex items-center mt-4 flex-row">
+        <img className='w-16' src={logoImg} alt=""/> 
         <h3>{username}</h3>
-        <Link to='/dashboard' className='nav-links'>
-          Home
-        </Link>
-        <Link to='/pay-rent' className='nav-links'>
-          Pay Rent
-        </Link>
-        <Link to='/requests' className='nav-links'>
-          Maintenance Requests
-        </Link>
-        <Link to='/messages' className='nav-links'>
-          Messages
-        </Link>
-        <Link to='/send-messages' className='nav-links'>
-          Send Messages
-        </Link> 
-        {role === 'owner' ? (
-        <Fragment>
-        <Link to='/add-homes' className='nav-links'>
-          Add Property
-        </Link>
-        <Link to='/home-showpage' className='nav-links'>
-          Property List
-        </Link>
-        <Link to='/showRequests' className='nav-links'>
-          Maintainace To Do
-        </Link> 
+       </div>
 
-        </Fragment>
-
-        ):(
-        <Fragment >
-        </Fragment>
-
-        )}
+       
 
       
         
+        <div className="pr-8 mt-8 md-hidden flex flex-row">
+        <Link to='/dashboard' className='p-4'>
+          Home
+        </Link>
+        <Link to='/pay-rent' className='p-4'>
+          Pay Rent
+        </Link>
+        <Link to='/requests' className='p-4'>
+          Maintenance Requests
+        </Link>
+        <Link to='/messages' className='p-4'>
+          Messages
+        </Link>
+        <Link to='/send-messages' className='p-4'>
+          Send Messages
+        </Link> 
+        </div>
+        </div>
       
     
 
-      
-      </div>
-    </div>
+    </nav>
   )
 }
 
