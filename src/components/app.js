@@ -4,12 +4,12 @@ import axios from 'axios'
 import '../style/main.scss'
 import "tailwindcss/tailwind.css"
 
-import NavBar from './Navigation/navBar'
+import NavBar from './Navigation/nav'
 
-import ButtonAppBar from './Navigation/nav'
+
 import DashBoard from './pages/dashBoard'
 import Request from './pages/requests'
-import LoginModal from './login/loginModal'
+
 import AddHomes from './pages/add-homes'
 import HomeShowPage from './pages/home-show-page'
 import RequestShowPage from './pages/showRequests'

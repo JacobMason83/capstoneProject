@@ -46,8 +46,10 @@ const LoginPage = props => {
     }
   }
   useEffect(() => {
-      let isMounted = true
-      isMounted
+    setUserName('')
+   setPassword('')
+     setOpen(false)
+     setRole('')
       
   }, [])
   return (

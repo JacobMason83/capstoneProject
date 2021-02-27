@@ -1,67 +1,117 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 
-import { Link } from 'react-router-dom'
-import SideBarFullScreen from '../Navigation/side-bar'
+import React, { useState, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
+import LandLordDropdown from '../helpers/landLordDropdown'
+import MessageDropdown from '../helpers/messageDropdown'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    width: '100vw',
-    
-    
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    color: '#fb8122'
-  },
-  title: {
-    flexGrow: 1,
-  },
-  navBar: {
-    background: '#1D2228', 
-    color: 'e1e2e2'
-  }
-}));
+function Navbar() {
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
-export default function ButtonAppBar(props) {
-  const [username, setUserName ] = useState('')
-  
-  useEffect(() => {
-        setUserName(props.username)
-    }, [props.username])
-  const classes = useStyles();
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
+  const onMouseEnter = () => {
+    if ((window.innerWidth < 960 )&&( document.getElementById ==='landlord' || document.getElementById === 'messages')) {
+      setDropdown(true);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
 
   return (
-    <div className={classes.root} background={classes.root.background}>
-      <AppBar position="static" className={classes.navBar} >
-        <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu"  onClick={() => <SideBarFullScreen open={{open: true}}/>} >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-           Landlord Tenant App
-          </Typography>
-          {props.role ? (
-              <Fragment>
-                <Button color='inherit'>{username}</Button>
-              </Fragment>
-          ):(
-              <Fragment>
-          <Button color="inherit"><Link to='./'>Login</Link></Button>
+    <Fragment>
+      <nav className='navbar'>
+        <Link to='/dashboard' className='navbar-logo' onClick={closeMobileMenu}>
+          LandlordTenant Home
+          
+        </Link>
+        <div className='menu-icon' onClick={handleClick}>
+          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        </div>
+        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <li className='nav-item'>
+            <Link to='/dashboard' className='nav-links' onClick={closeMobileMenu}>
+              Home
+            </Link>
+          </li>
+          <li
+            className='nav-item'
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
+            <Link
+              to='/'
+              className='nav-links'
+              onClick={closeMobileMenu}
+              id='landlord'
+            >
+              Landlord 
+            </Link>
+            {dropdown && <LandLordDropdown  
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave} />}
+          </li>
 
-              </Fragment>
-          )}
-        </Toolbar>
-      </AppBar>
-    </div>
+         
+          <li className='nav-item'>
+            <Link
+              to='/pay-rent'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Pay Rent
+            </Link>
+          </li>
+          <li className='nav-item'>
+            <Link
+              to='/requests'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Maitanence Requests
+            </Link>
+          </li>
+         
+          
+
+          <li
+            className='nav-item'
+          >
+            <Link
+              to='/send-messages'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Messages
+            </Link>
+          </li>
+          <li
+            className='nav-item'
+          >
+            <Link
+              to='/messaging'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Get messages
+            </Link>
+          </li>
+          
+        </ul>
+        
+      </nav>
+    </Fragment>
   );
 }
+
+export default Navbar;
