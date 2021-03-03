@@ -14,7 +14,7 @@ const LandLordDropdown= (props) =>  {
 },
     {
         title: 'Property List',
-        path: '/home-show-page',
+        path: '/home-showpage',
         cName: 'dropdown-link'
 },
     {

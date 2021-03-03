@@ -7,7 +7,7 @@
     height: 500px;    
    position: absolute;
     top: 200px;
-    left: 150px;
+    left: 0;
     .form-maitenance {
         display: flex;
         justify-content: center;
@@ -21,7 +21,7 @@
             text-align: center;
         }
         .form-wrapper{
-            background-image: url('./images/landlord-tenant.jpg');
+            background-color: $bg-color;
             background-size: cover;
             display: flex;
             align-items: center;
