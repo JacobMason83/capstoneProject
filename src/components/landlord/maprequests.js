@@ -12,11 +12,15 @@ export default function ShowAllRequests(props) {
                 <div key={item.id} className='request-card' >
                         <h1>Maintanence Requests </h1>
                     <div className="card-content">
-                    <h1>Renter <br /><hr></hr> Name: {item.renter}</h1>
-                    
-                    <h2>address <br /><hr></hr>{item.address}</h2>
-                   
-                    <p>Problem: <br />{item.description}</p>
+                    <div className="renter-content">
+                    <h1>Renter: {item.renter}</h1>
+                    </div>
+                    <div className="address-content">
+                    <h2>address: {item.address}</h2>
+                    </div>
+                   <div className="issues">
+                   <p>Issue: {item.description}</p>
+                   </div>
                     </div>                 
                 </div>
             )

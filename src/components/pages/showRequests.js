@@ -29,8 +29,9 @@ export default class RequestShowPage extends Component {
    render() {
       
      return (
-         
+         <div className="show-container">
         <ShowAllRequests needToBeFixed={this.state.needToBeFixed} />
+         </div>
   
    )
   }

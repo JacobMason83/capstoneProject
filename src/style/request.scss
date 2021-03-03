@@ -1,49 +1,78 @@
-.request-card{
-    position: absolute;
-    top: 350px;
-    left: 500px;
-    @include bg-guide();
-    .card-content {
+.show-container {
+    display: flex;
+    flex-basis: 100%;
+    flex-flow: wrap;
+    height: auto;
+    position: relative;
+    max-width: 1600px;
+    top: 150px;
+    left: 200px;
+     .request-card{
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         flex-direction: column;
-        height: auto;
-        border-bottom: 4px solid white;
-        margin-bottom: 30px;
-        h1 {
-            border: 1px dotted white;
-            font-size: 15px;
-            width: 100%;
-        }
-        h2 {
-         border: 1px dotted white;
-         font-size: 13px;
-         width: 100%;
-        }
-        p {
-            width: 100%;
-            text-align: center;
-            border: 1px dotted white;
-        }
-    }
-
-}
-        
-
-@media(max-width: 768px){
-    .request-card {
-        position: absolute;
-        top: 20px; 
-        left:110px;        
-        overflow: scroll;
+        border: 3px solid $button-bg-color;
+        width: 500px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        @include bg-guide();
         .card-content {
-            overflow:auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            height: 400px;
+            width: 400px;
             
+            h1 {
+                font-size: 25px;
+            }
+           .renter-content {
+               display: block;
+               text-align: center;
+               h1 {
+                   font-weight: 900;
+                   font-size: 21px;
+               }
+           }
+           .address-content {
+            display: block;
+            text-align: center;
+            h1 {
+                font-weight: 900;
+                font-size: 21px;
+            } 
+           }
+           .issues {
+            display: block;
+            text-align: center;
+            h1 {
+                font-weight: 900;
+                font-size: 21px;
+            } 
+           }
         }
+    
+    }
+            
+    
+    @media(max-width: 768px){
+        .request-card {
+            position: absolute;
+            top: 20px; 
+            left:110px;        
+            overflow: scroll;
+            .card-content {
+                overflow:auto;
+                
+            }
+            
+         }
         
-     }
+            }
     
-        }
+        
+}
 
-    
+
