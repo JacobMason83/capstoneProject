@@ -1,39 +1,44 @@
 .show-container {
     display: flex;
-    flex-basis: 100%;
     flex-flow: wrap;
-    height: auto;
+    height: fit-content;
     position: relative;
     max-width: 1600px;
-    top: 150px;
-    left: 200px;
+    top: 50px;
+    left: 100px;
+    background-color: $bg-color;
      .request-card{
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
         border: 3px solid $button-bg-color;
-        width: 500px;
-        margin-bottom: 20px;
-        margin-right: 20px;
-        @include bg-guide();
+        background-color: $button-bg-color;
+        width: 400px;
+        height: 300px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        border-radius: 20px;
+        h1 {
+            font-size: 0.8em;
+        }
         .card-content {
             display: flex;
             justify-content: flex-start;
             align-items: center;
             flex-direction: column;
-            height: 400px;
-            width: 400px;
+            height: 300px;
+            width: 300px;
             
             h1 {
-                font-size: 25px;
+                font-size: 0.8em;
             }
            .renter-content {
                display: block;
                text-align: center;
                h1 {
                    font-weight: 900;
-                   font-size: 21px;
+                   font-size: 0.8em;
                }
            }
            .address-content {
@@ -41,7 +46,7 @@
             text-align: center;
             h1 {
                 font-weight: 900;
-                font-size: 21px;
+                font-size: 0.8em;
             } 
            }
            .issues {
@@ -49,7 +54,7 @@
             text-align: center;
             h1 {
                 font-weight: 900;
-                font-size: 21px;
+                font-size: 0.6em;
             } 
            }
         }
