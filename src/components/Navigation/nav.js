@@ -96,7 +96,7 @@ function Navbar() {
             className='nav-item'
           >
             <Link
-              to='/messaging'
+              to='/messages'
               className='nav-links'
               onClick={closeMobileMenu}
             >

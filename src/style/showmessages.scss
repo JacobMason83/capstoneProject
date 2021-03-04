@@ -1,52 +1,57 @@
-.message-container {
-    display: grid;
-    grid-column: 3 / span 3;
-    grid-row: 1 ;
-    margin-top: 150px;
-    
-
-    .get-messages {
-        margin-bottom: 30px;
+.messages-container {
+    background-color: $bg-color;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 90%;
+    width: 100vw;
+    position: relative;
+    border-radius: 50%;
+   
+    .message-container {
+        position: relative;
+        top: 50px;
+        left: 50px;
         display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
-        .message-header {    
-            @include glass-bg-guide();
-            // justify-content: flex-start;
-            // align-items: center;
-            width: 33%;
-            height: 33px;
-            border-right: 2px solid white;
-            border-bottom: 2px solid white;
-            h1 {
-                font-size: 0.8em;
-                
-            }
-        }
-        .message-wrapper {
-            @include glass-bg-guide();
-            text-align: center;
-            display: inline-flex;
+        flex-flow: wrap;
+        align-items: center;
+        height: fit-content;
+        max-width: fit-content;
+        color: white;
+        .get-messages {
+            display: flex;
+            align-items: center;
             flex-direction: column;
-            width: 100%;
-            height: 100px;
-            padding: 0;
-            margin: 0;
-            border: 2px solid white;
-            margin-bottom: 25px;
-            p {
-                flex-wrap: wrap;
-               
+            width: 400px;
+            height: 350px;
+            background-color: $button-bg-color;
+            border-radius: 50%;
+            .message-header {    
+                width: 100%;
+                height: 33px;
+                h1 {
+                    font-size: 0.8em; 
+                }
             }
-            h6 {
-                font-size: 12px;
-                border: none;
-                width: 25%;
-               
-                padding-top: 20px;
-                margin-top: -3px;
-               
-}
+            .message-wrapper {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                height: 100px;
+                padding: 0;
+                margin: 0;
+                p {
+                    font-size: 0.8rem;
+                }
+                h6 {
+                    font-size: 0.5em;
+                    border: none;
+                    width: 75%;
+                    
+    }
+            }
         }
     }
 }

@@ -5,11 +5,8 @@ import '../style/main.scss'
 
 
 import NavBar from './Navigation/nav'
-
-
 import DashBoard from './pages/dashBoard'
 import Request from './pages/requests'
-
 import AddHomes from './pages/add-homes'
 import HomeShowPage from './pages/home-show-page'
 import RequestShowPage from './pages/showRequests'
@@ -17,7 +14,7 @@ import PayRent from './pages/payRent'
 import Messaging from './pages/messaging'
 import SendMessages from './landlord/sendMessages'
 import LoginPage from './pages/login-page'
-
+import Footer from './helpers/footer'
 // TODO
 // add routes for messaging, maitanence requestsxxx
 // portfolio , add remove tenants, for admin x
@@ -121,6 +118,7 @@ export default class App extends Component {
           />
           <Route path='/send-messages' component={SendMessages} />
         </Switch>
+        <Footer />
       </Router>
     )
   }

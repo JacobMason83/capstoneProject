@@ -1,6 +1,6 @@
 .dashboard-container {
   position: relative;
-  top: 200px;
+  top: 50px;
   left: 200px;
   display: flex;
   justify-content: flex-start;
@@ -8,8 +8,9 @@
   flex-direction: column;
   flex-basis: 100%;
   width: 100vw;
-  height: 80vh;
+  height: calc(80vh - 20vh);
   font-size: 20px;
+  
   .personal-header {
     display: flex;
     justify-content: flex-start;

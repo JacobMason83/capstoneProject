@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 //Todo get userinfo from state and use it to pass the id to the user message component
 const Messaging = props => {
@@ -18,9 +18,7 @@ const Messaging = props => {
       .catch(err => console.error(err))
   }, [])
   return (
-    <Fragment>
-    
-  
+    <div className="messages-container">
     <div className='message-container'>
       {data.map(item => {
         return (
@@ -36,7 +34,10 @@ const Messaging = props => {
         )
       })}
     </div>
-    </Fragment>
+    </div>
+    
+  
+   
     
   )
 }
