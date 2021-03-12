@@ -1,7 +1,8 @@
+
 .dashboard-container {
   position: relative;
-  top: 50px;
-  left: 200px;
+  top: 150px;
+  left: 15px;
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
@@ -10,6 +11,15 @@
   width: 100vw;
   height: calc(80vh - 20vh);
   font-size: 20px;
+  min-height: 500px;
+
+  background-image: url('./images/key.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+
   
   .personal-header {
     display: flex;
