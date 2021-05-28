@@ -4,7 +4,10 @@ import LogoImg from '../../style/images/acton.png'
 
 
 const Footer = () =>  {
-
+    const addClass = () => {
+        const addUnderline = document.getElementByClassName('.foot-links')
+        addUnderline.classList.add('underline')
+    }
    return(
    <footer className='footer-container'>
        <div className="footer-wrapper">

@@ -4,17 +4,14 @@
     align-items: center;
     height: calc(100vh - 86vh);
     width: 100vw;
-    position: absolute;
-   bottom: 0;
-   left: 0;
-   overflow: hidden;
+    position: fixed;
+    bottom: 0%;
+//    left: 0;
+//    overflow: hidden;
    background-color: $button-bg-color;
    font-size: 20px;
    
     .footer-wrapper {
-        position: relative;
-        top: 0;
-        left: 0;
         flex-grow: 1;
         .top {
             display: flex;
@@ -29,18 +26,22 @@
                 .foot-links {
                     text-decoration: none;
                     color: $bg-color;
+                    &:hover {
+                        border-bottom: 5px solid black;
+                        text-transform: uppercase;
+                    }
                 }
             }
             .right-side {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: inherit;
+                height: 50%;
                
                 img {
                     width: 50%;
-                    height: 150px;
-                    margin-top: 35px;
+                    height: 130px;
+                    margin-top: 50px;
                     position: relative;
                     bottom: -15px;
                 }
@@ -61,4 +62,7 @@
             }
         }
     }
+}
+.underline {
+    border-bottom: 5px solid black ;
 }

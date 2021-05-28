@@ -12,13 +12,17 @@
   height: calc(80vh - 20vh);
   font-size: 20px;
   min-height: 500px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
-  background-image: url('./images/key.jpg');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
+  // background-image: url('./images/key.jpg');
+  // background-attachment: fixed;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
 
   
   .personal-header {
@@ -31,6 +35,7 @@
     position: relative;
     top: 0 ; 
     left: 0;
+    transform: translate(5%, -10%);
     background-color: $bg-color;
   }
   .property-name {
@@ -39,8 +44,9 @@
     align-items: flex-start;
     height: 300px;
     position: absolute;
-    top: 200;
-    left: 525px;
+    top: 0;
+    left: 0;
+    transform: translate(160%, 10%);
    border: 2px solid $font-color;
    border-radius: 2px;
    background-color: $bg-color;
@@ -51,8 +57,9 @@
     height: 300px;
     .card {
       position: absolute;
-      top: 355px;
-      left: 525px;
+      top: 0%;
+      left: 0%;
+      transform: translate(80%, 120%);
       display: flex;   
       justify-content: flex-start;   
       align-items: center;
@@ -70,8 +77,11 @@
    align-items: center;
    border: 2px solid $font-color;
    position: absolute;
-   top: 620px;
-   left: 100px;
+   top: 50%;
+   left: 50%;
+   transform: translate(180%, -80%);
+   width: 300px;
+   height: 300px;
    background-color: $bg-color;
    
    
