@@ -6,8 +6,7 @@
     width: 100vw;
     position: fixed;
     bottom: 0%;
-//    left: 0;
-//    overflow: hidden;
+    z-index: -1;
    background-color: $button-bg-color;
    font-size: 20px;
    
@@ -65,4 +64,15 @@
 }
 .underline {
     border-bottom: 5px solid black ;
+}
+@media (max-width: 940px) {
+    .foot-links {
+        font-size: 0.7rem;
+        margin-right: 20px;
+    }
+    .bottom {
+        h3 {
+            font-size: 1em;
+        }
+    }
 }

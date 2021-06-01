@@ -44,12 +44,13 @@ const Messaging = props => {
   </tr>
 </thead>
       {data.map(item => {
+        const timeStamp =  Date(item.timestamps.createdAt)
         return (
           <tbody key={item.id}>
           <tr >
             <td>{item.from}</td>
             <td>{item.msg}</td>
-            <td>{item.timestamps.createdAt}</td>
+            <td>{timeStamp}</td>
           </tr>
           </tbody>
         )

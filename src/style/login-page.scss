@@ -9,7 +9,7 @@
       text-transform: uppercase;
       color: $button-bg-color;
       font-weight: 900;
-      font-size: 5em;
+      font-size: 3em;
       position: absolute;
       top: 20%;
       left: 40%;
@@ -55,8 +55,8 @@
       flex-direction: column;
     cursor: pointer;
     position: absolute;
-    top: 40%;
-    left: 40%;
+    top: 20%;
+    left: 10%;
     @include glass-bg-guide();
     .title-wrapper {
       text-align: center;
@@ -120,5 +120,11 @@
         }
       }
     }
+  }
+}
+@media(max-width: 790px) {
+  .login-container {
+    top: 20%;
+    left: 40%;
   }
 }

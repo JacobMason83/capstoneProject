@@ -1,63 +1,68 @@
 .add-homes-form {
-    position: absolute;
-    top: 150px;
-    left: 500px;
-    width: 60vw;
+    // position: absolute;
+    // top: 150px;
+    // left: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
     .landlord-form {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content:flex-start;
         align-items: center;
         height: 100%;
+        width: 70%;
+        margin-top: 5%;
         @include bg-guide();
         .input-wrapper {
-           margin-bottom: 15px;
+            margin: 0px auto;
            margin-top: 15px;
-           margin-left: 300px;
-           width: 90%;
+           width: 100%;
            input {
             border-radius:10px;  
             height: 30px; 
             border:2px solid black;  
-            width:60%;
+            width:65%;
            }
         }
         .btn {
             @include btn-guide();
             width: 100px;
+            margin-top: 50px;
+        }
+        label {
+            font-size: 16px;
         }
     
   }
 }
-@media(max-width: 768px){
-    .add-homes-form {
-        position: absolute;
-        top: 150px;
-        left: 150px;
-        width: 430px;
-        .landlord-form {
-            width: 50%;
-            h1 {
-                font-size: 15px;
-            }
-            .input-wrapper {
-               margin: 0;
-               font-size: 15px;
+// @media(max-width: 768px){
+//     .add-homes-form {
+     
+//         .landlord-form {
+//             width: 50%;
+//             h1 {
+//                 font-size: 15px;
+//             }
+//             .input-wrapper {
+//                margin: 0;
+//                font-size: 15px;
               
-               display: flex;
-               justify-content: center;
-               flex-direction: column;
-               input {
-                border-radius:10px;  
-                height: 30px; 
-                border:2px solid black;  
-                width:60%;
-               }
-            }
-            .btn {
-                margin-top: 20px;
-            }
+//                display: flex;
+//                justify-content: center;
+//                flex-direction: column;
+//                input {
+//                 border-radius:10px;  
+//                 height: 30px; 
+//                 border:2px solid black;  
+//                 width:60%;
+//                }
+//             }
+//             .btn {
+//                 margin-top: 20px;
+//             }
         
-      }
-    }
-}
+//       }
+//     }
+// }

@@ -1,89 +1,70 @@
 
 .dashboard-container {
-  position: relative;
-  top: 150px;
-  left: 15px;
   display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-direction: column;
+  flex-wrap: wrap;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+.dashboard-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-basis: 100%;
-  width: 100vw;
-  height: calc(80vh - 20vh);
-  font-size: 20px;
-  min-height: 500px;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  // background-image: url('./images/key.jpg');
-  // background-attachment: fixed;
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-
-  
   .personal-header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 50px;
-    height: 500px;
-    width: 500px;
-    position: relative;
-    top: 0 ; 
-    left: 0;
-    transform: translate(5%, -10%);
+    height: 300px;
+    width: 300px;
     background-color: $bg-color;
+    margin-right: $margins-space;
+    border: 2px solid $font-color;
   }
   .property-name {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     height: 300px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(160%, 10%);
    border: 2px solid $font-color;
    border-radius: 2px;
    background-color: $bg-color;
-   width: 500px;
+   width: 300px;
+   margin-right: $margins-space;
   }
-  .property-content {
-    width: 500px;
-    height: 300px;
+  
     .card {
-      position: absolute;
-      top: 0%;
-      left: 0%;
-      transform: translate(80%, 120%);
-      display: flex;   
-      justify-content: flex-start;   
-      align-items: center;
+      margin-right: $margins-space;
+      border: 2px solid $font-color;
+      width: 300px;
+      height: 300px;
       background-color: $bg-color;
-      flex-direction: column;
-      .card-wrapper {
-        border: 2px solid $font-color;
-        height: 300px;
-      }
     }
-  }
+ 
   .message-content {
-   display: flex;
-   justify-content: flex-start;
-   align-items: center;
    border: 2px solid $font-color;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(180%, -80%);
    width: 300px;
    height: 300px;
    background-color: $bg-color;
    
-   
+  }
+  }
+}
+@media (max-width: 940px) {
+  .dashboard-container{
+    width: 100%;
+    height: 100%;
+    .dashboard-wrapper {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .personal-header,
+      .property-name,
+      .card,
+      .message-content{
+      width: 300px;
+      height: 100px;
+      margin-top: 50px;
+      }
+      .message-content {
+        margin-top: 50px;
+        margin-right: 30px
+      }
+    }
+
   }
 }

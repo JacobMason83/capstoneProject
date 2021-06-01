@@ -2,6 +2,7 @@ $button-bg-color: #fb8122;
 $bg-hover: #71b2e7;
 $font-color: #e1e2e2;
 $bg-color: #1D2228;
+$margins-space: 30px;
 
 @mixin btn-guide {
     background-color:$bg-color;
@@ -44,6 +45,5 @@ $bg-color: #1D2228;
     align-items: center;
     flex-direction: row;
     text-align: center;
-    
     @content;
 }

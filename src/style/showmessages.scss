@@ -103,3 +103,17 @@
         }
     }
 }
+@media (max-width: 940px) {
+    .messages-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .message-container {
+            justify-self: flex-start;
+            font-size: 0.8em;
+            .messagesTable {
+                width: 400px;
+            }
+        }
+    }
+}
