@@ -34,32 +34,32 @@ export default class PayRent extends Component {
     render(){
         const { renter, address, rentAmount, creditCard } = this.state
         return(
-            
+            <div className="pay-container">
                <form onSubmit={this.handleSubmit} className="rent-form">
                <h1>Pay your rent here:</h1>
                    <div className="content-wrapper">
-                   <label htmlFor="renter">Name</label>
+                   <label className='visually-hidden' htmlFor="renter">Name</label>
                    <input type="text"
                        name='renter'
                        value={renter}
                        placeholder="Name"
                        onChange={this.handleChange}
                    />
-                   <label htmlFor="address">Address</label>
+                   <label className='visually-hidden' htmlFor="address">Address</label>
                    <input type="text"
                        name='address'
                        value={address}
                        placeholder="Address"
                        onChange={this.handleChange}
                    />
-                   <label htmlFor="creditCard">Credit Card</label>
+                   <label className='visually-hidden' htmlFor="creditCard">Credit Card</label>
                    <input type="text"
                        name='creditCard'
                        value={creditCard}
                        placeholder="CC number"
                        onChange={this.handleChange}
                    />
-                   <label htmlFor="rentAmount">Amount</label>
+                   <label className='visually-hidden' htmlFor="rentAmount">Amount</label>
                    <input type="text"
                        name='rentAmount'
                        value={rentAmount}
@@ -70,6 +70,7 @@ export default class PayRent extends Component {
 
                    </div>
                </form>
+               </div>
             
         )
     }
