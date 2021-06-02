@@ -29,12 +29,12 @@ const Footer = () =>  {
                Maitenance Requests
             </Link>
            </div>
-           <div className="right-side">
+           {/* <div className="right-side">
              <img src={LogoImg}/>
-           </div>
+           </div> */}
        </div>
        <div className="bottom">
-         <h3><a href="https://jdm-school-react-portfolio.herokuapp.com/"><i className="fa fa-copyright" aria-hidden="true"></i> Mason Web Designs</a></h3>
+         <h3><a href="https://jdm-myportfolio.herokuapp.com"><i className="fa fa-copyright" aria-hidden="true"></i> Mason Web Designs</a></h3>
        </div>
        </div>
    </footer>

@@ -33,7 +33,6 @@ function Navbar() {
       <nav className='navbar'>
         <Link to='/dashboard' className='navbar-logo' onClick={closeMobileMenu}>
           LandlordTenant Home
-          
         </Link>
         <div className='menu-icon' onClick={handleClick}>
           <i className={click ? 'fa fa-times' : 'fa fa-plus-square'} />

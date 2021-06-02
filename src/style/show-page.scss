@@ -1,14 +1,20 @@
 .property-item-container {
-    display: flex;   
-    flex-flow: wrap;  
-    min-width: 100vw;
-    min-height: 100vh;
-    // position: relative;
-    // top: 5px;
-    // left:12%;
-    width: fit-content;
-    height: fit-content;
-    .property-wrapper {        
+  display: flex;
+  flex-flow: wrap;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  margin: auto auto;
+  .property-item-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    .property-wrapper {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -20,65 +26,70 @@
       padding: 0;
       margin-right: 20px;
       margin-bottom: 5px;
-      border: 6px solid rgba(255, 255, 255, 0.18);
       
-      .image-wrapper {
-          width: 80%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 2px solid white;
-          height: 200px;
-          border-radius: 15px;
-          img {
-              width: 100%;
-              height: inherit;
-              border-radius: 15px;
-              }
-        }
-        .content {
-            @include bg-guide();
-            padding: 5px;
-            .title {
-                @include card-content();
-                h1 {
-                    font-size: 1em;
-                    margin-right: 25px;
-                }
-            }
-            .address {
-                @include card-content();
-                h2 {
-                    font-size: 1em;
-                    margin-right: 25px;
-                } 
-            }
-            .price {
-                @include card-content();
-                h2 {
-                    font-size: 1em;
-                    margin-right: 25px;
-                }
-            }
-            .renter {
-                @include card-content();
-                h1 {
-                    font-size: 1em;
-                    margin-right: 25px ;
-                }
-            }
-        }
-    }
 
-}
-@media(max-width: 768px){
-    .property-item-container {
+      .image-wrapper {
+        width: 100%;
         display: flex;
         justify-content: center;
-        flex-direction: column;
-        overflow: scroll;
-        .property-wrapper {
-            width: 50%;
+        align-items: center;
+        height: 200px;
+        
+        img {
+          width: 100%;
+          height: inherit;
+          border-radius: 15px;
         }
+      }
+      .content {
+        @include bg-guide();
+        height: 100%;
+        padding: 5px;
+        @include card-content();
+        width: 100%;
+        .title {
+          h1 {
+            font-size: 1em;
+            margin-right: 25px;
+          }
+        }
+        .address {
+        
+          h2 {
+            font-size: 1em;
+            margin-right: 25px;
+          }
+        }
+        .price {
+        
+          h2 {
+            font-size: 1em;
+            margin-right: 25px;
+          }
+        }
+        .renter {
+        
+          h1 {
+            font-size: 1em;
+            margin-right: 25px;
+          }
+        }
+      }
     }
+  }
+}
+@media (max-width: 768px) {
+  .property-item-container {
+      width: 100%;
+      .property-item-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: scroll;
+    width: 100%;
+    .property-wrapper {
+      width: 50%;
+    }
+  }
+}
 }

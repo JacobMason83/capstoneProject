@@ -42,10 +42,10 @@ $margins-space: 30px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 @mixin card-content {
-    display: inline-flex;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: row;
-    text-align: center;
+    flex-direction: column;
+    // text-align: center;
     @content;
 }

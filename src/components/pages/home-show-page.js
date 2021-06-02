@@ -29,7 +29,7 @@ export default class HomeShowPage extends Component {
     return (
      
           <div className='property-item-container'>
-          
+          <div className="property-item-wrapper">
             {homes.map(item => {
               return (
                 <div key={item.id} className='property-wrapper'>
@@ -53,7 +53,7 @@ export default class HomeShowPage extends Component {
                 </div>
               )
             })}
-
+            </div>
           </div>
           
      
