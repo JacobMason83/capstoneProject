@@ -1,83 +1,37 @@
 .show-container {
     display: flex;
-    flex-flow: wrap;
-    height: fit-content;
-    position: relative;
-    max-width: 1600px;
-    top: 50px;
-    left: 100px;
-    background-color: $bg-color;
-     .request-card{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        border: 3px solid $button-bg-color;
-        background-color: $button-bg-color;
-        width: 400px;
-        height: 300px;
-        margin-bottom: 10px;
-        margin-right: 10px;
-        border-radius: 20px;
-        h1 {
-            font-size: 0.8em;
-        }
-        .card-content {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            flex-direction: column;
-            height: 300px;
-            width: 300px;
-            
-            h1 {
-                font-size: 0.8em;
-            }
-           .renter-content {
-               display: block;
-               text-align: center;
-               h1 {
-                   font-weight: 900;
-                   font-size: 0.8em;
-               }
-           }
-           .address-content {
-            display: block;
-            text-align: center;
-            h1 {
-                font-weight: 900;
-                font-size: 0.8em;
-            } 
-           }
-           .issues {
-            display: block;
-            text-align: center;
-            h1 {
-                font-weight: 900;
-                font-size: 0.6em;
-            } 
-           }
-        }
+    width: 50vw;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    .show-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     
-    }
-            
-    
-    @media(max-width: 768px){
-        .request-card {
-            position: absolute;
-            top: 20px; 
-            left:110px;        
-            overflow: scroll;
-            .card-content {
-                overflow:auto;
-                
-            }
-            
-         }
-        
-            }
-    
-        
+    table { 
+        width: 100%; 
+        border-collapse: collapse; 
+      }
+      
+      tr:nth-of-type(odd) { 
+        background: $button-bg-color; 
+      }
+      tr:nth-of-type(even) { 
+        background: black; 
+      }
+      th { 
+        background: #333; 
+        color: black; 
+        font-weight: bold; 
+      }
+      td, th { 
+        padding: 6px; 
+        border: 1px solid #ccc; 
+        text-align: left; 
+      }
+}
 }
 
 

@@ -31,7 +31,20 @@ export default class RequestShowPage extends Component {
       
      return (
          <div className="show-container">
+         <div className="show-wrapper">
+         <table>
+         <thead>
+           <tr>
+             <td>Name</td>
+             <td>address</td>
+             <td>Description</td>
+           </tr>
+         </thead>
+         <tbody>
         <ShowAllRequests needToBeFixed={this.state.needToBeFixed} />
+         </tbody>
+         </table>
+         </div>
          </div>
   
    )
