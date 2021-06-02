@@ -21,7 +21,9 @@ $margins-space: 30px;
 @mixin input-guide {
     border-radius:10px;  
     height: 30px; 
-    border:2px solid black;  
+    border:2px solid black; 
+    // margin-top: 20px; 
+   
 }
 @mixin bg-guide {
     // background: rgb(31,31,52);
