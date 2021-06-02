@@ -3,23 +3,15 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    height: 500px;    
-   position: relative;
-    top: 200px;
-    left: 0;
+    width: 100%;
+    margin-top: 7%;
+ 
     .form-maitenance {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 20px;
-        height: 600px;
-        width: 50%;
         @include bg-guide();
         h1 {
             text-align: center;
             color: $button-bg-color;
+            font-size: 1.5em;
         }
         .form-wrapper{
             background-color: $bg-color;
@@ -31,8 +23,6 @@
             flex-basis: 100%;
             width: 500px;
             margin-bottom: 55px;
-            background-color: $button-bg-color ;
-            border-radius: 50%;
             
             .float-container {
                 border: solid 1px #ccc;
