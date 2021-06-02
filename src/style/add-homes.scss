@@ -1,23 +1,21 @@
 .add-homes-form {
-    // position: absolute;
-    // top: 150px;
-    // left: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     .landlord-form {
-        display: flex;
-        flex-direction: column;
-        justify-content:flex-start;
-        align-items: center;
         height: 100%;
-        width: 70%;
+        width: 50%;
         margin-top: 5%;
         @include bg-guide();
+        .add-home-wrapper {
+           text-align: center;
+            h1 {
+                font-size: 1.5em;
+            }
         .input-wrapper {
-            margin: 0px auto;
-           margin-top: 15px;
+            margin: 15px 0px auto auto;
+
            width: 100%;
            input {
             border-radius:10px;  
@@ -26,10 +24,14 @@
             width:65%;
            }
         }
+    }
         .btn {
             @include btn-guide();
             width: 100px;
+            display: flex;
+            align-items: center;
             margin-top: 50px;
+            margin-left: auto;
         }
         label {
             font-size: 16px;
@@ -37,32 +39,13 @@
     
   }
 }
-// @media(max-width: 768px){
-//     .add-homes-form {
-     
-//         .landlord-form {
-//             width: 50%;
-//             h1 {
-//                 font-size: 15px;
-//             }
-//             .input-wrapper {
-//                margin: 0;
-//                font-size: 15px;
-              
-//                display: flex;
-//                justify-content: center;
-//                flex-direction: column;
-//                input {
-//                 border-radius:10px;  
-//                 height: 30px; 
-//                 border:2px solid black;  
-//                 width:60%;
-//                }
-//             }
-//             .btn {
-//                 margin-top: 20px;
-//             }
-        
-//       }
-//     }
-// }
+.visually-hidden {
+    border-width: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+  }

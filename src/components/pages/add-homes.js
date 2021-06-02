@@ -49,9 +49,11 @@ export default class AddHomes extends Component {
     return (
       <div className='add-homes-form'>
         <form className='landlord-form' onSubmit={this.handleSubmit}>
+          <div className="add-home-wrapper">
           <h1>Add Your Properties Here:</h1>
+
           <div className='input-wrapper'>
-            <label htmlFor='propertyName'>Property Name </label>
+            <label className='visually-hidden' htmlFor='propertyName'>Property Name </label>
             <input
               type='text'
               name='propertyName'
@@ -61,7 +63,7 @@ export default class AddHomes extends Component {
             />
           </div>
           <div className='input-wrapper'>
-            <label htmlFor='address'>Address </label>
+            <label className='visually-hidden' htmlFor='address'>Address </label>
             <input
               type='text'
               name='address'
@@ -71,7 +73,7 @@ export default class AddHomes extends Component {
             />
           </div>
           <div className='input-wrapper'>
-            <label htmlFor='value'>Property Value</label>
+            <label className='visually-hidden' htmlFor='value'>Property Value</label>
             <input
               type='text'
               name='value'
@@ -81,7 +83,7 @@ export default class AddHomes extends Component {
             />
           </div>
           <div className='input-wrapper'>
-            <label htmlFor='renter'>Renter Name </label>
+            <label className='visually-hidden' htmlFor='renter'>Renter Name </label>
             <input
               type='text'
               name='renter'
@@ -91,7 +93,7 @@ export default class AddHomes extends Component {
             />
           </div>
           <div className='input-wrapper'>
-            <label htmlFor='image'>Image of Property </label>
+            <label className='visually-hidden' htmlFor='image'>Image of Property </label>
             <input
               type='text'
               name='image'
@@ -99,6 +101,7 @@ export default class AddHomes extends Component {
               placeholder='Image of Property/leave blank'
               onChange={this.handleChange}
             />
+          </div>
           </div>
           <button className='btn' type="submit">Add-Home</button>
         </form>

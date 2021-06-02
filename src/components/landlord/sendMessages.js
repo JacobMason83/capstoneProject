@@ -30,7 +30,7 @@ const SendMessages = props => {
             <div className="form-wrapper">
                 <div className="content-wrapper">
                 <h1>Send your messages here </h1>
-                <label htmlFor='userName'>To:</label>
+                <label className='visually-hidden' htmlFor='userName'>To:</label>
                 <input
                   type='text'
                   name='username'
@@ -38,7 +38,7 @@ const SendMessages = props => {
                   placeholder='To'
                   value={username}
                 />
-                <label htmlFor='userName'>From</label>
+                <label className='visually-hidden' htmlFor='userName'>From</label>
                 <input
                   type='text'
                   name='from'
@@ -47,7 +47,7 @@ const SendMessages = props => {
                   value={from}
                 />
                 
-                <label htmlFor='message'>Message</label>
+                <label className='visually-hidden' htmlFor='message'>Message</label>
                 <textarea
                   rows='10'
                   col="5"
