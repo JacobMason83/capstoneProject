@@ -1,5 +1,11 @@
-
+.dashboard {
+  background-color: gray;
+  color: orange;
+  height: 100vh;
+  width: 100vw;
+}
 .dashboard-container {
+  background-color: gray;
   display: flex;
   flex-wrap: wrap;
   min-width: 100vw;

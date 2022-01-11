@@ -1,4 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
+import { Stack, Badge } from 'react-bootstrap'
+import homePic from '../../style/images/home.svg'
 
 // TODO
 // add to show properties, and any messages that came in
@@ -13,29 +15,25 @@ const DashBoard = props => {
 
   return (
     <Fragment>
-      <div className='dashboard-container'>
-        <div className='dashboard-wrapper'>
-          <div className='personal-header'>
-            <div className='property-count'>
-              {username}
-              <h4>
-                You have insert property count here properties registered!
-              </h4>
-            </div>
-          </div>
-          <div className='property-name'>
-            <h3>Here are all of your properties:</h3>
-          </div>
+    <div className="dashboard">
+    <h1>
+      <Badge>
+        {username  || 'Hi welcome to the Landlord tenant App'}
+      </Badge>
+    </h1>
+    
+      <Stack direction='horizontal' gap={4}>
+        <h4 ms-auto> 
+        <img src={homePic} alt="home" />
+        You have insert property count here properties registered!</h4>
 
-          <div className='card'>
-            <div className='card-wrapper'>
-              <h3>Here are the renters who have paid this month: </h3>
-            </div>
-          </div>
-          <div className='message-content'>
-            <h3>hi im a message please read me </h3>
-          </div>
-        </div>
+        <h3 ms-auto>Here are all of your properties:</h3>
+     
+    
+        <h3 ms-auto>Here are the renters who have paid this month: </h3>
+
+        <h3 ms-auto>hi im a message please read me </h3>
+        </Stack>
       </div>
     </Fragment>
   )

@@ -1,12 +1,22 @@
 .navbar {
     background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
     height: 80px;
+    min-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
   }
-  
+  .sidebarBg {
+    background-color: gray;
+  }
+ .text-color  {
+   color: orange;
+ }
+ .bg-black {
+   background-color: black;
+ }
+
   .navbar-logo {
     color: white;
     justify-self: start;
@@ -37,10 +47,11 @@
     align-items: center;
     height: 150px;
     z-index: 1;
+    text-decoration: none;
+    text-decoration-color: none;
   }
   
   .nav-links {
-    color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
   }

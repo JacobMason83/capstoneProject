@@ -15,6 +15,7 @@ import Messaging from './pages/messaging'
 import SendMessages from './landlord/sendMessages'
 import LoginPage from './pages/login-page'
 import Footer from './helpers/footer'
+import { Container } from 'react-bootstrap'
 // TODO
 // add routes for messaging, maitanence requestsxxx
 // portfolio , add remove tenants, for admin x
@@ -81,6 +82,7 @@ export default class App extends Component {
 
   render () {
     return (
+      <Container fluid dropdown>
       <Router>
         <NavBar username={this.state.username} role={this.state.role} />
 
@@ -120,6 +122,7 @@ export default class App extends Component {
         </Switch>
         <Footer />
       </Router>
+      </Container>
     )
   }
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Table from 'react-bootstrap/Table'
 // import MessageTable  from '../helpers/messageTable.js'
 //Todo get userinfo from state and use it to pass the id to the user message component
 const Messaging = props => {
@@ -17,7 +18,7 @@ const Messaging = props => {
       })
       .catch(err => console.error(err))
   }, [])
-  const rows = data.map(item => {
+  let rows = data.map(item => {
     return (
       { id: item.id,
         message: item.msg,
@@ -33,29 +34,27 @@ const Messaging = props => {
     <div className="messages-container">
     <div className='message-container'>
     <h1>Messages</h1>
-    <table className='messagesTable'>
-    <thead>
-
-    
+    <Table colSpan={2} striped bordered hover size="sm">
+  <thead>
   <tr>
-    <th>From</th>
-    <th>Message</th>
-    <th>sent@</th>
+    <th colSpan={2}>From</th>
+    <th colSpan={2}>Message</th>
+    <th colSpan={2}>sent@</th>
   </tr>
 </thead>
-      {data.map(item => {
+      {rows.map(item => {
         const timeStamp =  Date(item.timestamps.createdAt)
         return (
           <tbody key={item.id}>
-          <tr >
-            <td>{item.from}</td>
-            <td>{item.msg}</td>
-            <td>{timeStamp}</td>
+          <tr colSpan={2} >
+            <td colSpan={2}>{item.from}</td>
+            <td colSpan={2}>{item.msg}</td>
+            <td colSpan={2}>{timeStamp}</td>
           </tr>
           </tbody>
         )
       })}
-      </table>
+      </Table>
     </div>
     </div>
   )
